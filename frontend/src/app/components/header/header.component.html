@@ -1,0 +1,61 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="https://bulma.io">
+       <img src="../../../assets/images/logo.png" >
+    </a>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item">
+        Home
+      </a>
+
+
+
+
+    </div>
+
+    <div *ngIf="getUserName()" class="navbar-end">
+      <div class="navbar-item">
+        <a class="navbar-item">
+
+        {{ getUserName()}}
+        </a>
+        <div class="">
+          <i class="far fa-file-image fa-2x ms-2"></i>
+
+        </div>
+        <div class="buttons">
+          <a class="">
+
+          </a>
+          <a class="button is-light" (click)="logout()">
+            Log Out
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="!getUserName()" class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-primary" (click)=" goTORegister()">
+            <strong>Sign up</strong>
+          </a>
+          <a class="button is-light" (click)=" goTOLogin()">
+            Log in
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</nav>

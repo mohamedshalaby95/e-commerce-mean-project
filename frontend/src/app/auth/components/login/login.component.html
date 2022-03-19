@@ -1,0 +1,61 @@
+<div class="form-container">
+ <div class="form-caption">
+   <form  [formGroup]="loginForm" (ngSubmit)="submitForm()" >
+    <div class="field">
+      <p class="control has-icons-left has-icons-right">
+        <input class="input" type="email" placeholder="Email" formControlName="email">
+        <span class="icon is-small is-left">
+          <i class="fas fa-envelope"></i>
+        </span>
+        <span *ngIf="email?.valid "class="icon is-small is-right">
+          <i class="fas fa-check"></i>
+        </span>
+
+       <span class="message-valid"  *ngIf="email?.invalid &&email?.touched">
+            This not valid email
+          </span>
+
+      </p>
+    </div>
+    <div class="field">
+      <p class="control has-icons-left">
+        <input class="input" type="password" placeholder="Password" formControlName="password">
+        <span class="icon is-small is-left">
+          <i class="fas fa-lock"></i>
+        </span>
+        <span  class="message-valid" *ngIf="password?.invalid &&password?.touched">
+          This not valid password
+        </span>
+      </p>
+    </div>
+    <span  class="message-valid" *ngIf="errorLogin">
+      {{errorLogin | uppercase}}
+    </span>
+    <div class="field">
+      <p class="control button-center">
+        <button [disabled]="password?.invalid || email?.invalid" class="button is-success mt-3 is-full" type="submit">
+          Login
+        </button>
+      </p>
+    </div>
+
+    <div class="field">
+      <p class="control  new-acount">
+       Don't have account yet?<span (click)="goToRegister()">Create Account</span>
+      </p>
+    </div>
+
+
+
+   </form>
+ </div>
+</div>
+
+
+
+
+
+
+
+
+
