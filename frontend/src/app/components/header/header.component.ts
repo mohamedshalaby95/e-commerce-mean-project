@@ -32,5 +32,8 @@ this.router.navigate(['login'])
  goTOLogin(){
   this.router.navigate(['login'])
 }
+gotoProducts(){
+  this.router.navigate(['products'])
+}
 
 }
