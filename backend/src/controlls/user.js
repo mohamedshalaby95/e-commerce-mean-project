@@ -56,7 +56,7 @@ async function updateUser(req, res) {
   
   }
 
-  console.log(req.params.id);
+
   user = await userModel.findByIdAndUpdate(req.params.id, {
     $set: {
       firstName: req.body.firstName,
@@ -67,7 +67,7 @@ async function updateUser(req, res) {
   });
   user = await user.save();
   const token=user.generatetoken()
-  user=_.pick(user,["firstName","lastName"])
+  user=_.pick(user,["firstName","lastName","isAdmin"])
  
   res.send({...user,token})
 }

@@ -20,17 +20,25 @@ nameUser:string;
 
   }
   getUserName(){
-    return localStorage.getItem('dataUser')
+
+
+    return JSON.parse( localStorage.getItem("dataUser"))?.firstName
+  }
+  getRole(){
+    return JSON.parse( localStorage.getItem("dataUser") as any)?.isAdmin
   }
   logout(){
 this.authService.IsLoggedOut();
-this.router.navigate(['login'])
+this.router.navigate([''])
   }
  goTORegister(){
    this.router.navigate(['register'])
  }
  goTOLogin(){
   this.router.navigate(['login'])
+}
+goToControll(){
+  this.router.navigate(['admin'])
 }
 
 }

@@ -17,10 +17,11 @@
         Home
       </a>
 
+      <a *ngIf="getRole()" (click)="goToControll()" class="navbar-item">
+       Dash Bord
+      </a>
 
-
-
-    </div>
+   </div>
 
     <div *ngIf="getUserName()" class="navbar-end">
       <div class="navbar-item">

@@ -3,6 +3,7 @@ import { authService } from '../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import {Iuser} from '../../../shared/user.type'
 import { FormBuilder, FormGroup,FormControl, Validators } from '@angular/forms';
+import { tokenize } from '@angular/compiler/src/ml_parser/lexer';
 
 @Component({
   selector: 'app-login',
@@ -40,16 +41,17 @@ export class LoginComponent implements OnInit {
     this.authService.UserLogin(this.loginForm.value).subscribe((res)=>{
       if(res !=null){
         (this.response as any)=res;
-
+      const  {token,firstName,lastName,isAdmin}=this.response as any
+    console.log(firstName,lastName,isAdmin)
 
         localStorage.setItem('token',(this.response as any).token)
-        localStorage.setItem('dataUser',(this.response as any).firstName)
-         this.router.navigate(["todos"])
+        localStorage.setItem('dataUser',JSON.stringify({firstName,lastName,isAdmin}))
+         this.router.navigate([""])
       }
 
     },
     (err)=>{
-     
+
       this.loginForm.reset()
       this.errorLogin=(JSON.stringify(err.error.message) as any)
 

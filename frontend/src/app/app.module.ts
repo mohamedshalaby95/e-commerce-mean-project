@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { TokenInseptorsService } from './products/inseptors/token-inseptors.service';
 import { NgxSmartModalModule } from 'ngx-smart-modal';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -22,7 +23,7 @@ import { NgxSmartModalModule } from 'ngx-smart-modal';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule, NgxSmartModalModule.forRoot()
+    HttpClientModule, NgxSmartModalModule.forRoot(), BrowserAnimationsModule
   ],
   providers: [
     {

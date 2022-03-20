@@ -20,10 +20,6 @@ export class authGuard implements CanActivate {
       return false
     }
   }
-    // route: ActivatedRouteSnapshot,
-    // state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-
-
-    // }
+    
 
 }
