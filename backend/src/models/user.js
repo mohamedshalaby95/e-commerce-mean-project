@@ -8,7 +8,14 @@ const userSchema = new Schema({
   lastName: { type: String, required: true, minlength: 3 },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
-  isAdmin:{ type:Boolean,default:false}
+  isAdmin:{ type:Boolean,default:false},
+  shippingAdress: {
+    address: { type: String, default:"" },
+    country: { type: String, default:"" },
+    city: { type: String, default:"" },
+    mobile: { type: String, default:"" },
+    postCode: { type: String, required: true },
+  },
    })
 
 

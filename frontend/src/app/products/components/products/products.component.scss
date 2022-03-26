@@ -1,0 +1,21 @@
+.card {
+    margin-bottom: 30px;
+}
+.card-img-top{
+    border-bottom: 1px solid black;
+}
+.card-title{
+    text-transform: capitalize;
+    font-size: 25px;
+}
+.available{
+    color: black;
+    font-weight: 700;
+}
+.notavailable{
+    font-weight: 700;
+}
+.buttons{
+    display: flex;
+    justify-content: space-around;
+}

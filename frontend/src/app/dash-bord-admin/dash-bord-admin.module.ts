@@ -4,11 +4,13 @@ import { CommonModule } from '@angular/common';
 import { DashBordAdminRoutingModule } from './dash-bord-admin-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { AdminProductComponent } from './components/admin-product/admin-product.component';
+import { DialogComponent } from './components/dialog/dialog.component';
 
 
 @NgModule({
   declarations: [
-    AdminProductComponent
+    AdminProductComponent,
+    DialogComponent
   ],
   imports: [
     CommonModule,

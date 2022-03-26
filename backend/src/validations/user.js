@@ -12,6 +12,14 @@ module.exports = (body) => {
       minDomainSegments: 2,
       tlds: { allow: ["com", "net"] },
     }),
+    shippingAdress: {
+      address: Joi.string(),
+      country: Joi.string(),
+      city:Joi.string(),
+      mobile: Joi.string(),
+      postCode: Joi.string(),
+    },
+
   });
   return Schema.validate(body);
 };

@@ -1,12 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { authGuard } from '../auth/guards/auth.guard';
+// import { authGuard } from '../auth/guards/auth.guard';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { ProductsComponent } from './components/products/products.component';
 
 
 const routes: Routes = [
 
   // {path:"todos" ,component:TodosComponent}
-  
+  {path:"products",component:ProductsComponent},
+  {path:"productDetails/:id",component:ProductDetailsComponent}
+
 ];
 
 @NgModule({

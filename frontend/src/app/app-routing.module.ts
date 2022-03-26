@@ -10,6 +10,12 @@ const routes: Routes = [
   {path: "", loadChildren: () => import('./products/products.module').then(m => m.ProductsModule )},
   {path: "admin", loadChildren: () => import('./dash-bord-admin/dash-bord-admin.module').then(m => m.DashBordAdminModule )},
 
+  { path: 'order', loadChildren: () => import('./order/order.module').then(m => m.OrderModule) ,canActivate:[authGuard] },
+
+
+
+
+
 ];
 
 @NgModule({

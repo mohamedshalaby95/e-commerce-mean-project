@@ -1,7 +1,7 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item" href="https://bulma.io">
-       <img src="../../../assets/images/logo.png" >
+      <img src="../../../assets/images/logo.png">
     </a>
 
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -20,6 +20,9 @@
       <a *ngIf="getRole()" (click)="goToControll()" class="navbar-item">
        Dash Bord
       </a>
+      <a class="navbar-item" (click)="gotoProducts()">
+        products
+      </a>
 
    </div>
 
@@ -27,7 +30,7 @@
       <div class="navbar-item">
         <a class="navbar-item">
 
-        {{ getUserName()}}
+          {{ getUserName()}}
         </a>
         <div class="">
           <i class="far fa-file-image fa-2x ms-2"></i>

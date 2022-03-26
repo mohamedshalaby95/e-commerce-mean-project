@@ -1,0 +1,137 @@
+<div   class="form-container">
+  <div mat-dialog-content class="form-caption">
+    <form  [formGroup]="productForm"  (ngSubmit)="submitForm()" >
+
+     <div class="field">
+       <p class="control has-icons-left has-icons-right">
+         <input  class="input is-primary" type="text" placeholder="Name" formControlName="name">
+
+         <span *ngIf="name?.valid "class="icon is-small is-right ">
+           <i class="fas fa-check "></i>
+         </span>
+
+        <span class="message-valid"  *ngIf="name?.invalid &&name?.touched">
+             This name not valid
+           </span>
+
+       </p>
+     </div>
+
+
+
+
+
+    <div class="field">
+      <p class="control has-icons-left has-icons-right">
+        <input class="input is-primary" type="text" placeholder="Brand" formControlName="brand">
+
+        <span *ngIf="brand?.valid "class="icon is-small is-right">
+          <i class="fas fa-check"></i>
+        </span>
+        <span  class="message-valid" *ngIf="brand?.invalid && brand?.touched">
+          This not valid brand
+        </span>
+      </p>
+    </div>
+
+    <div class="field">
+      <p class="control has-icons-left has-icons-right">
+        <input class="input is-primary" type="text" placeholder="Image" formControlName="image">
+        <span *ngIf="image?.valid "class="icon is-small is-right">
+          <i class="fas fa-check"></i>
+        </span>
+        <span  class="message-valid" *ngIf=" image?.invalid &&  image?.touched">
+          This not valid path image
+        </span>
+      </p>
+    </div>
+
+    <div class="field">
+      <p class="control has-icons-left has-icons-right">
+        <input class="input is-primary" type="number" placeholder="Price" formControlName="price">
+        <span *ngIf="price?.valid "class="icon is-small is-right">
+          <i class="fas fa-check"></i>
+        </span>
+        <span  class="message-valid" *ngIf="price?.invalid && price?.touched">
+          This not valid number
+        </span>
+      </p>
+    </div>
+
+
+
+    <div class="field">
+      <p class="control has-icons-left has-icons-right">
+        <input class="input is-primary" type="number" placeholder="CountInStock" formControlName="countInStock">
+        <span *ngIf="countInStock?.valid "class="icon is-small is-right">
+          <i class="fas fa-check"></i>
+        </span>
+        <span  class="message-valid" *ngIf=" countInStock?.invalid && countInStock?.touched">
+          This not valid number
+        </span>
+      </p>
+    </div>
+
+    <div class="select is-primary mb-3  ">
+      <select formControlName="category" >
+
+        <option>Category</option>
+        <option>Lap Top</option>
+        <option>Mobile</option>
+        <option>I Pad</option>
+      </select>
+    </div>
+
+    <div class="field is-primary">
+      <p class="control has-icons-left has-icons-right">
+
+
+        <textarea class="textarea is-primary" placeholder="Description" formControlName="description"></textarea>
+        <span *ngIf="description?.valid "class="icon is-small is-right">
+         <i class="fas fa-check"></i>
+       </span>
+        <span  class="message-valid" *ngIf="description?.invalid && description?.touched">
+          This not valid desciption
+        </span>
+      </p>
+    </div>
+
+
+    <!-- <div class="field">
+      <p class="control has-icons-left has-icons-right">
+        <input class="input" type="text" placeholder="Category" formControlName="category">
+
+        <span *ngIf="category?.valid "class="icon is-small is-right">
+          <i class="fas fa-check"></i>
+        </span>
+        <span  class="message-valid" *ngIf="category?.invalid && category?.touched">
+          This not valid category
+        </span>
+      </p>
+    </div> -->
+
+
+
+     <!-- <div class="field">
+       <p class="control button-center">
+         <button type="button" mat-raised-button mat-dialog-close color="warn" (click)="close()">Close</button>
+         <button style="margin-left:8px" color="primary"  mat-raised-button [disabled]="name?.invalid || description?.invalid ||image?.invalid ||price?.invalid || countInStock?.invalid ||  category?.value =='Category'" class="button is-success mt-3 is-full" type="submit">
+         Save
+         </button>
+
+       </p>
+     </div> -->
+
+    <div mat-dialog-actions [align]="'end'">
+
+       <button type="button" mat-raised-button mat-dialog-close color="warn" (click)="close()">Close</button>
+      <button style="margin-left:8px" mat-raised-button color="primary" [disabled]=" productForm?.untouched||name?.invalid || description?.invalid ||image?.invalid ||price?.invalid || countInStock?.invalid ||  category?.value =='Category'"  >{{actionBtn}}</button>
+    </div>
+
+
+
+
+    </form>
+
+  </div>
+ </div>

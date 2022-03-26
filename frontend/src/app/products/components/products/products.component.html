@@ -1,0 +1,49 @@
+<!-- <div *ngFor="let product of products">
+    <p>{{product?.name}}</p>
+    <img [src]="imagePrefix+product?.image">
+</div> -->
+
+<div class="container">
+    <div class="row">
+        <div *ngFor="let product of products  | paginate: { itemsPerPage: 6, currentPage: p } " class="col-md-4">
+
+            <div class="card text-center">
+                <img [src]="imagePrefix+product?.image" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">{{product?.brand}}</h5>
+                    <p class="card-text">{{product?.description}}</p>
+                    <strong>${{product?.price |number }}</strong>
+
+
+
+                    <p *ngIf="product?.countInStock">
+                        <span class="available">stock:</span> {{product?.countInStock}}
+                    </p>
+                    <p class="text-danger" *ngIf="product?.countInStock===0">
+                        <span class="notavailable">stock:</span> Not Available
+                    </p>
+
+
+                    <!-- <ngb-rating [rate]="+product?.rating"></ngb-rating> -->
+                   {{product?.rating}}
+
+                   <!-- {{product?.rating}} -->
+                   <!-- <ng-template let-fill="fill" let-index="index">
+                     <span class="star" [class.filled]="" [class.bad]="index < 3">&#9733;</span>
+                   </ng-template> -->
+                    <!-- <ngb-rating [(rate)]=" Rating()">
+                      </ngb-rating> -->
+                    <div class="buttons">
+                        <button [routerLink]="['/productDetails', product?._id]" class="btn btn-primary"> View </button>
+                    <button class="btn btn-success" [disabled]="product?.countInStock === 0">Add To Cart</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <ngb-pagination [collectionSize]="numPages" [(page)]="p" ></ngb-pagination>
+
+
+    </div>
+</div>

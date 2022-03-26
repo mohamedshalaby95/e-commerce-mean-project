@@ -1,0 +1,33 @@
+<!-- <h1>{{id}}</h1>
+<h1>{{productsDetails?.name}}</h1>
+<img [src]="imagePrefix+productsDetails?.image"> -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <img class="img-fluid" [src]="imagePrefix+productsDetails?.image">
+        </div>
+        <div class="col-md-6">
+            <h1>{{productsDetails?.brand}}</h1>
+            <h6 *ngIf="productsDetails?.countInStock">
+                <strong class="available">In Stock:</strong> {{productsDetails?.countInStock}}
+            </h6>
+            <h6 class="text-danger" *ngIf="productsDetails?.countInStock===0">
+                <strong class="notavailable">In Stock:</strong> Not Available
+            </h6>
+            <p> <strong>Description</strong> : {{productsDetails?.description}}</p>
+            <p><strong>price</strong> : ${{productsDetails?.price  }}</p>
+            <p><strong>Category</strong> : {{productsDetails?.category }}</p>
+                <button class="btn btn-success" [disabled]="productsDetails?.countInStock === 0">Add To Cart</button>
+        </div>
+    </div>
+</div>
+
+<!-- brand: "asus"
+category: "laptop"
+countInStock: 4
+description: "a new lap with good processor "
+image: "1.jpg"
+name: "laptop"
+price: 20000
+rating: 8 -->

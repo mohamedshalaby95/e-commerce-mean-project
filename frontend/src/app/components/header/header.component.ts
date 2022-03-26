@@ -40,5 +40,8 @@ this.router.navigate([''])
 goToControll(){
   this.router.navigate(['admin'])
 }
+gotoProducts(){
+  this.router.navigate(['products'])
+}
 
 }

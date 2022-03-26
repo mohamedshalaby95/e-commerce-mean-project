@@ -9,6 +9,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { TokenInseptorsService } from './products/inseptors/token-inseptors.service';
 import { NgxSmartModalModule } from 'ngx-smart-modal';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import {NgxPaginationModule} from 'ngx-pagination';
 
 
 
@@ -23,6 +24,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    // NgxPaginationModule,
     HttpClientModule, NgxSmartModalModule.forRoot(), BrowserAnimationsModule
   ],
   providers: [
