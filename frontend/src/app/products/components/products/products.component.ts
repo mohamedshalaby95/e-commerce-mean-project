@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductsService } from '../../seriveces/products.service';
 import { Products } from '../../models/product';
+import { CartService } from 'src/app/cart/services/cart.service';
+import { IcartProducts } from 'src/app/cart/models/product';
+import {MatDialog} from '@angular/material/dialog';
+import {ConfirmComponent} from '../confirm/confirm.component'
+
 
 @Component({
   selector: 'app-products',
@@ -11,14 +16,17 @@ import { Products } from '../../models/product';
 
 export class ProductsComponent implements OnInit {
   products: Products [] = [];
+  cartItems: IcartProducts [] = []
   myRate:number=5
-  // currentRate = "product?.rating";
+
   p: number = 1 || undefined;
-  numPages:number
+  numPages:number;
+  brand:any;
+  selectedCategory: string = '';
 
 
   imagePrefix:string = 'assets/images/'
-  constructor(private router:Router,private _products:ProductsService) {
+  constructor(private router:Router,private _products:ProductsService,private cartService : CartService,private dialog:MatDialog) {
 
     // this.currentRate=6;
 
@@ -29,10 +37,40 @@ export class ProductsComponent implements OnInit {
       this.products = data
       this.numPages=Math.ceil(this.products.length/6)*10
 
+
     })
 
 
   }
+  search(){
+    if(this.brand == ""){
+      this.ngOnInit();
+    }else{
+      this.products =this.products.filter(res => {
+        this.numPages=Math.ceil(this.products.length/6)*10
+        return res.brand?.toLocaleLowerCase().match(this.brand.toLocaleLowerCase())
+      })
+    }
+  }
+
+  selectChangeHandler (event: any) {
+ console.log(event.target.value)
+
+ if(event.target.value==='Choose By Category'){
+   this.ngOnInit()
+ }
+ else{
+  this._products.getProductBYCategory(event.target.value).subscribe((data)=>{
+    this.products = data
+
+    this.numPages=Math.ceil(this.products.length/6)*10
+
+
+  })
+
+ }
+}
+
 
   get Rating()
   {
@@ -40,6 +78,49 @@ export class ProductsComponent implements OnInit {
   }
 
 
+  addToCart(product:Products){
+
+    if( localStorage.getItem('cart')){
+    console.log("here")
+    this.cartService.getProducts().subscribe(res => {
+      this.cartItems = res;
+      // console.log(this.cartItems)
+
+    })
+  const flag=  this.cartItems.some((cartProduct)=>{
+     return product._id===cartProduct._id
+    })
+
+    if(flag){
+    // alert("this product  in your cart are u want to increase by 1")
+     this.dialog.open(ConfirmComponent,{
+      data:product,
+      width:'30%'
+
+     }).afterClosed().subscribe(result => {
+      if(result == !true){
+        console.log("true")
+        return true;
+      }else{
+        console.log("false")
+        return false;
+      }
+    })
+
+
+
+  }
+    else{
+
+      this.cartService.addToCart(product)
+
+    }
+
+  }else{
+    console.log("here add to cart")
+    this.cartService.addToCart(product)
+  }
+  }
 
 
 }

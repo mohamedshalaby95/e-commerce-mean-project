@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule ,FormsModule} from '@angular/forms';
 import { NgxSmartModalModule } from 'ngx-smart-modal';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
@@ -13,6 +13,12 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import {MatInputModule} from '@angular/material/input';
+import {MatSidenavModule} from '@angular/material/sidenav';
+
+// import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+// import { NgxMaterialRatingModule } from 'ngx-material-rating';
+
 
 // import {mat-dialog-actions} from '@angular/material/dialog'
 
@@ -38,7 +44,12 @@ import {MatInputModule} from '@angular/material/input';
      MatTableModule,
      MatFormFieldModule,
      MatSortModule,
-     MatInputModule
+     MatInputModule,
+     FormsModule,
+     MatSidenavModule,
+
+
+
     ]
 })
 export class SharedModule { }

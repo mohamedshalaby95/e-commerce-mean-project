@@ -23,13 +23,13 @@ async function addUser(req, res, next) {
   }
 
   user = new userModel(
-    _.pick(req.body, ["firstName", "lastName", "email", "password","isAdmin"])
+    _.pick(req.body, ["firstName", "lastName", "email", "password","isAdmin","shippingAddress"])
   );
   user = await user.save();
   
 
   const token=user.generatetoken()
-  user=_.pick(user,["firstName","lastName","isAdmin"])
+  user=_.pick(user,["firstName","lastName","isAdmin","email"])
  
   res.send({...user,token})
 
@@ -37,37 +37,31 @@ async function addUser(req, res, next) {
 }
 
 async function updateUser(req, res) {
- 
-
-  const { error } = userValidation(req.body);
-
-  if (error) {
-    
-      res.status(404)
-    throw new Error(`${error.details[0].message}`);
-    
-  }
+  
 
   let user = await userModel.findOne({ email: req.body.email });
 
-  if (user && user._id != req.params.id) {
-    res.status(401);
-    throw new Error(`This Email is Registed`);
-  
-  }
+ 
 
 
-  user = await userModel.findByIdAndUpdate(req.params.id, {
+  user = await userModel.findByIdAndUpdate({_id:req.user._id}, {
     $set: {
       firstName: req.body.firstName,
       lastName: req.body.lastName,
       email: req.body.email,
-      password: req.body.password,
+      shippingAddress: {
+        address: req.body.shippingAddress.address,
+        country: req.body.shippingAddress.country,
+        city: req.body.shippingAddress.city,
+        mobile: req.body.shippingAddress.mobile,
+        postCode: req.body.shippingAddress.postCode,
+      }
     },
-  });
+  },{new:true});
   user = await user.save();
+ 
   const token=user.generatetoken()
-  user=_.pick(user,["firstName","lastName","isAdmin"])
+  user=_.pick(user,["firstName","lastName","isAdmin","email","shippingAddress"])
  
   res.send({...user,token})
 }

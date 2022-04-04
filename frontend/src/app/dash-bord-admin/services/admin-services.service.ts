@@ -27,4 +27,20 @@ export class AdminServicesService {
 
     return this.httpClient.delete<Iproduct>(`${environment.baseUrl}/products/${id}` );
    }
+   getAllOrders(){
+
+    return this.httpClient.get<any>(environment.baseUrl + '/order/admin' );
+   }
+   deleteOrder(id:string){
+    console.log(id)
+    return this.httpClient.delete<any>(`${environment.baseUrl}/order/${id}` );
+   }
+   getAllOrdersPending(){
+
+    return this.httpClient.get<any>(environment.baseUrl + '/order/admin/pending' );
+   }
+   updateStatusOrder(data:{status:string,id:string}){
+
+    return this.httpClient.patch<{status:string,id:string}>(environment.baseUrl + '/order/admin',data );
+   }
 }

@@ -31,6 +31,22 @@ async function getProducts( req,res){
   
   
   }
+////////////////////////////////////////////
+
+async function getProductsByCategory( req,res){
+
+
+
+  const products= await ProductModel.find({category:req.params.category});
+  
+
+ 
+  res.json(products);
+  
+
+
+}
+  ///////////////////////////////////
 
   async function getProduct( req,res){
 
@@ -64,8 +80,7 @@ async function getProducts( req,res){
     const { error } = productValidation(req.body);
     const mongoose = require('mongoose');
 
-    console.log(mongoose.Types.ObjectId.isValid(req.params.id));
-    console.log(req.params.id)
+  
     if (error) {
         res.status(400)
       throw new Error(`${error.details[0].message}`);
@@ -105,4 +120,4 @@ async function getProducts( req,res){
   
   
   }
-module.exports={addProduct,getProducts,getProduct,deleteProduct,updateProduct}
+module.exports={addProduct,getProducts,getProduct,deleteProduct,updateProduct,getProductsByCategory}

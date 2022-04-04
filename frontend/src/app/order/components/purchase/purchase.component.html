@@ -1,0 +1,145 @@
+
+
+<div class="section-overlay">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-5 p-5 backGround-caption mt-5">
+         <h3 class="text-white fw-bold mt-5 fs-4">Purchase details</h3>
+         <p class="text-white fw-bold mt-5 fs-6">Billing address</p>
+
+         <div class="caption-information mt-5 d-flex justify-content-between align-items-center">
+           <div class="p-4 d-flex">
+             <img src="https://appvital.com/images/profile/file-uploader-api-profile-avatar-2.jpg" alt="profile-image" />
+             <span>
+               <p class="ms-2 text-white  fs-5 ">{{userData?.firstName || ""}}</p>
+               <p class="ms-2">{{userData?.shippingAddress?.mobile || ""}}</p>
+               <p class="ms-2">{{userData?.email || ""}}</p>
+
+              </span>
+           </div>
+           <button class="btn  h-25 me-4" (click)="GoCheckOut()">Edit</button>
+         </div>
+
+         <div class="row mt-5 ">
+           <div class="col-md-6">
+             <h5 class="text-white fs-4 mt-5 mb-5">Shipping</h5>
+
+             <div class="shipping-information d-flex align-items-center flex-column p-5 ">
+
+
+               <div class="d-flex mt-5 ">
+                <img src="../../../../assets//images/dml-01.png" >
+                <span  >
+                  <p class="ms-2 text-white fs-5">Free</p>
+                  <p class="ms-2">20 days</p>
+                </span>
+               </div>
+
+               <div class="d-flex mt-5">
+                <img src="../../../../assets//images/FedEx-EDI-Integration_FedEx-EDI.png" >
+                <span >
+                  <p class="ms-2 text-white fs-6"> $ .99</p>
+                  <p class="ms-2">10 days</p>
+                </span>
+               </div>
+
+               <div class="d-flex mt-5">
+                <img src="../../../../assets//images/ups-logo-logos-de-marcas.png" >
+                <span >
+                  <p class="ms-2 text-white fs-6"> $ 1.22</p>
+                  <p class="ms-2"> 5 days</p>
+                </span>
+               </div>
+             </div>
+           </div>
+           <div class="col-md-6 ">
+            <h5 class="text-white fs-4 mt-5 mb-5">Payment</h5>
+             <div class="shipping-information d-flex  flex-column p-5 ">
+               <div class="d-flex mt-5 align-items-center justify-content-center ">
+                           <img class="" src="../../../../assets//images/paypal-logo-png-71.png" >
+
+
+
+
+                           <p class="ms-4 text-white fs-6">
+                            PayPal
+
+                          </p>
+
+
+
+
+              </div>
+
+              <div class="d-flex mt-5 align-items-center justify-content-center">
+
+
+                  <img  class="" src="../../../../assets//images/Mastercard_logo.jpg" >
+
+                <p class="ms-4 text-white fs-6 " >
+                Master
+                Cart
+
+               </p>
+             </div>
+
+
+             <div class="d-flex mt-5 align-items-center justify-content-center">
+              <img class=""src="../../../../assets/images/visa.jpg" >
+              <p class="ms-4 text-white fs-6" >  Visa
+                Cart
+
+
+             </p>
+           </div>
+
+
+        </div>
+          </div>
+         </div>
+
+      </div>
+
+      <div class="col-md-5  p-5 backGround-caption right-part mt-5  ">
+          <div class=" d-flex justify-content-between mt-5 mb-4 ">
+            <p class="text-white has-text-weight-bold">Your order</p>
+            <button id="edit-button" class="btn "> Edit</button>
+
+          </div>
+
+          <div class="row">
+            <div *ngFor="let product of products" class="col-md-3  mt-3 m-auto">
+               <img  class="img-fluid pt-2 rounded" [src]="imagepath+product.image"/>
+               <p class="mt-2 main-color">{{product.name |uppercase}}</p>
+               <p class="text-white text-bold">{{product.price}}</p>
+            </div>
+          </div>
+
+          <hr class="mt-5 mb-5"/>
+
+          <div class="row">
+            <!-- <h6 class="text-center fs-4 text-white mb-4">Summary Order</h6> -->
+            <div class="col-md-7 justify-content-center  d-flex sumary-header">
+                 <img id="discount-image"class="img-fluid" src="assets/images/discounts.png" />
+            </div>
+            <div class="col-md-5   main-color">
+              <p>Sub Price :{{subPrice}}</p>
+              <p class="mt-2 main-color">Taxes : Free</p>
+              <p class="mt-2  .main-color main-color">Discount : 00</p>
+              <p class="mt-2 text-white fs-5">Total Price : {{subPrice}}</p>
+
+            </div>
+          </div>
+         <hr class="mt-5 mb-5" />
+
+           <div class="d-flex justify-content-end p-5">
+             <button id="order-buuton" class="btn " (click)="addOrder()"> Place Order</button>
+           </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+  </div>
+</div>
+

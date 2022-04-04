@@ -23,17 +23,20 @@ async function login(req,res){
    
     
     const password= await bycrpt.compare(req.body.password,user.password)
-    console.log(password)
+  
  if(!password){
     res.status(400);
     throw new Error(`the email or password not valid `);  
  }
  const token=user.generatetoken()
- user=_.pick(user,["firstName","lastName","isAdmin"])
+ user=_.pick(user,["firstName","lastName","isAdmin","email"])
+
 
  res.send({...user,token})
 
 
 }
+
+
 
 module.exports={login}

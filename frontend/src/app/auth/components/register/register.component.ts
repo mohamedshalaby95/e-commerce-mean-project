@@ -43,15 +43,15 @@ export class RegisterComponent implements OnInit {
       return this.registerForm.get('password')
     }
   submitForm(){
-console.log(this.registerForm.value)
+
     this.authService.UserRegister(this.registerForm.value).subscribe((res)=>{
       if(res !=null){
         (this.response as any)=res;
 
-
+        const  {token,firstName,lastName,isAdmin,email}=this.response as any
         localStorage.setItem('token',(this.response as any).token)
-        localStorage.setItem('dataUser',(this.response as any).fristname)
-         this.router.navigate(["todos"])
+        localStorage.setItem('dataUser',JSON.stringify({firstName,lastName,isAdmin,email}))
+         this.router.navigate([""])
       }
 
     },

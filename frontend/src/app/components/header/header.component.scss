@@ -1,0 +1,36 @@
+.numberOfitems{
+  position: relative;
+  top: -6px;
+  z-index: 2;
+  right: 20px;
+  // border: 1px solid red;
+  color: white;
+  border-radius: 50%;
+  // background-color: red;
+}
+.numberOfitems span{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  // padding: 5px;
+  bottom:12px;
+  background-color: red;
+  border-radius: 50%;
+ right: -30px;
+ text-align: center;
+
+}
+ .profile{
+   border:3px bold white;
+ }
+//  ul li a:hover{
+//    color:white;
+//    transition-duration:1s ;
+//  }
+.active{
+  color:white !important;
+  background-color: #317ECE;
+}
+#img-profile{
+  cursor: pointer;
+}

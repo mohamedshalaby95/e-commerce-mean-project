@@ -1,6 +1,7 @@
 const jwt=require('jsonwebtoken')
 
 module.exports=( req,res,next)=>{
+    
     if(req.user&&req.user.isAdmin){
         next()
     }

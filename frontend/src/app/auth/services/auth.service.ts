@@ -25,7 +25,8 @@ export class authService {
   }
   IsLoggedOut(){
     localStorage.removeItem('token');
-    localStorage.removeItem('dataUser')
+    localStorage.removeItem('dataUser');
+
 
   }
   getToken(){

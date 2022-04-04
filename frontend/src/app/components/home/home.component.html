@@ -1,0 +1,50 @@
+<ngb-carousel *ngIf="images">
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img id="img" [src]="images[0]" alt="Random first slide">
+    </div>
+    <div class="carousel-caption">
+      <p >Find Any Laptop </p>
+      <h1 >LAPTOP YOU NEED</h1>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img id="img" [src]="images[1]" alt="Random second slide">
+    </div>
+    <div class="carousel-caption">
+      <p>Find Any Laptop </p>
+
+      <h1>LAPTOP YOU NEED</h1>
+    </div>
+  </ng-template>
+
+</ngb-carousel>
+<!-- ///// -->
+<div class="row mt-4  mb-4 text-center">
+  <h3 class="fs-2 mt-5 mb-5">Features</h3>
+
+<div class="card" style="width: 25rem;">
+  <img class="card-img-top" src="../../../assets/images/7.png" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title mb-5">24/7 Customer Service.</h5>
+    <p class="card-text mt-5">businesses are able to engage their customers whenever they need by deploying digital channels</p>
+  </div>
+
+</div>
+
+<div class="card" style="width: 25rem;">
+  <img class="card-img-top" src="../../../assets/images/6.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Low Cost</h5>
+    <p class="card-text">you sell with absolutely no costs, but will come with strict limits and/or charge commission fees.</p>
+  </div>
+</div>
+<div class="card" style="width: 25rem;">
+  <img class="card-img-top" src="../../../assets/images/5.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Security Mechanisms</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+</div>

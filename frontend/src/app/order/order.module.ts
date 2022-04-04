@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 
 import { OrderRoutingModule } from './order-routing.module';
 import { CheckoutComponent } from './components/checkout/checkout.component';
+import { PurchaseComponent } from './components/purchase/purchase.component';
+import { PaymentComponent } from './components/payment/payment.component';
 
 
 
@@ -11,7 +13,9 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
   declarations: [
 
 
-    CheckoutComponent
+    CheckoutComponent,
+      PurchaseComponent,
+      PaymentComponent
   ],
   imports: [
     CommonModule,

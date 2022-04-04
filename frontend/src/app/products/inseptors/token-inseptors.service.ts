@@ -11,7 +11,7 @@ export class TokenInseptorsService implements HttpInterceptor {
   constructor(private authService:authService) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    console.log(this.authService.getToken())
+    
     let jwtToken=req.clone({
   setHeaders:{
 Authorization:`Bearer ${this.authService.getToken().trim()} `

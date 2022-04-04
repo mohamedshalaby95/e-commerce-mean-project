@@ -9,12 +9,12 @@ const userSchema = new Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   isAdmin:{ type:Boolean,default:false},
-  shippingAdress: {
+  shippingAddress: {
     address: { type: String, default:"" },
     country: { type: String, default:"" },
     city: { type: String, default:"" },
     mobile: { type: String, default:"" },
-    postCode: { type: String, required: true },
+    postCode: { type: String },
   },
    })
 
@@ -34,6 +34,7 @@ userSchema.methods.generatetoken = function () {
   const token = jwt.sign({ _id: this._id,isAdmin:this.isAdmin }, `${process.env.SECERT_TOKEN}`);
   return token;
 };
-const userModel = model("user", userSchema);
 
-module.exports = userModel;
+const User = model("User", userSchema);
+
+module.exports = User;

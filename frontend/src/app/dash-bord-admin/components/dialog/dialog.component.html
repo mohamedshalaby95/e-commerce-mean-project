@@ -4,7 +4,7 @@
 
      <div class="field">
        <p class="control has-icons-left has-icons-right">
-         <input  class="input is-primary" type="text" placeholder="Name" formControlName="name">
+         <input  class="input is-info" type="text" placeholder="Name" formControlName="name">
 
          <span *ngIf="name?.valid "class="icon is-small is-right ">
            <i class="fas fa-check "></i>
@@ -23,7 +23,7 @@
 
     <div class="field">
       <p class="control has-icons-left has-icons-right">
-        <input class="input is-primary" type="text" placeholder="Brand" formControlName="brand">
+        <input class="input is-info" type="text" placeholder="Brand" formControlName="brand">
 
         <span *ngIf="brand?.valid "class="icon is-small is-right">
           <i class="fas fa-check"></i>
@@ -34,9 +34,9 @@
       </p>
     </div>
 
-    <div class="field">
+    <div class="field position-relative">
       <p class="control has-icons-left has-icons-right">
-        <input class="input is-primary" type="text" placeholder="Image" formControlName="image">
+        <input class="imag-input" class="input is-info" type="file" accept="image/png, image/jpeg,image/jpg" placeholder="Image" formControlName="image">
         <span *ngIf="image?.valid "class="icon is-small is-right">
           <i class="fas fa-check"></i>
         </span>
@@ -48,7 +48,7 @@
 
     <div class="field">
       <p class="control has-icons-left has-icons-right">
-        <input class="input is-primary" type="number" placeholder="Price" formControlName="price">
+        <input class="input is-info" type="number" placeholder="Price" formControlName="price">
         <span *ngIf="price?.valid "class="icon is-small is-right">
           <i class="fas fa-check"></i>
         </span>
@@ -62,7 +62,7 @@
 
     <div class="field">
       <p class="control has-icons-left has-icons-right">
-        <input class="input is-primary" type="number" placeholder="CountInStock" formControlName="countInStock">
+        <input class="input is-info" type="number" placeholder="CountInStock" formControlName="countInStock">
         <span *ngIf="countInStock?.valid "class="icon is-small is-right">
           <i class="fas fa-check"></i>
         </span>
@@ -72,21 +72,21 @@
       </p>
     </div>
 
-    <div class="select is-primary mb-3  ">
+    <div class="select is-info mb-3  ">
       <select formControlName="category" >
 
         <option>Category</option>
-        <option>Lap Top</option>
+        <option>LapTop</option>
         <option>Mobile</option>
-        <option>I Pad</option>
+        <option>IPad</option>
       </select>
     </div>
 
-    <div class="field is-primary">
+    <div class="field is-info">
       <p class="control has-icons-left has-icons-right">
 
 
-        <textarea class="textarea is-primary" placeholder="Description" formControlName="description"></textarea>
+        <textarea class="textarea is-info" placeholder="Description" formControlName="description"></textarea>
         <span *ngIf="description?.valid "class="icon is-small is-right">
          <i class="fas fa-check"></i>
        </span>

@@ -4,14 +4,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: $main-color;
+  background-color: #293240;
   height: 100vh;
  .button-center{
    text-align: center;
 
    button{
      width:50% ;
-     background-color: white;
+     background-color: #317ECE;
      color: black;
     font-weight: 500;
    }
@@ -30,5 +30,14 @@
  }
  .form-caption{
    width:350px;
+  }
+}
+
+.image-login{
+
+  img{
+    width:100px;
+    height:100px;
+
   }
 }

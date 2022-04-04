@@ -41,11 +41,15 @@ export class LoginComponent implements OnInit {
     this.authService.UserLogin(this.loginForm.value).subscribe((res)=>{
       if(res !=null){
         (this.response as any)=res;
-      const  {token,firstName,lastName,isAdmin}=this.response as any
-    console.log(firstName,lastName,isAdmin)
+      const  {token,firstName,lastName,isAdmin,email}=this.response as any
+
 
         localStorage.setItem('token',(this.response as any).token)
-        localStorage.setItem('dataUser',JSON.stringify({firstName,lastName,isAdmin}))
+
+        if( !localStorage.getItem('dataUser')){
+
+          localStorage.setItem('dataUser',JSON.stringify({firstName,lastName,isAdmin,email}))
+        }
          this.router.navigate([""])
       }
 

@@ -9,6 +9,12 @@ import { HeaderComponent } from './components/header/header.component';
 import { TokenInseptorsService } from './products/inseptors/token-inseptors.service';
 import { NgxSmartModalModule } from 'ngx-smart-modal';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HomeComponent } from './components/home/home.component';
+import { SharedModule } from './shared/shared.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FooterComponent } from './components/footer/footer.component';
+import { ProfileComponent } from './components/profile/profile.component';
+// import { NgxMaterialRatingModule } from 'ngx-material-rating';
 // import {NgxPaginationModule} from 'ngx-pagination';
 
 
@@ -17,13 +23,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   declarations: [
     AppComponent,
 
-    HeaderComponent
+    HeaderComponent,
+      HomeComponent,
+      FooterComponent,
+      ProfileComponent,
+
 
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    NgbModule,
+    // NgxMaterialRatingModule ,
     // NgxPaginationModule,
     HttpClientModule, NgxSmartModalModule.forRoot(), BrowserAnimationsModule
   ],

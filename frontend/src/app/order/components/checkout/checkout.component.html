@@ -5,9 +5,9 @@
     <div class="  col-md-8 ">
       <h3 class="text-center p-4">
 
-        <i class="fas fa-truck fa-2x" ></i>
+        <i class="fas fa-truck fa-2x " ></i>
 
-      <span class="ms-1  p-4">Shipping Detealis</span>
+      <span class="ms-1  p-4 fs-4 has-text-weight-bold " >Shipping Detealis</span>
 
     </h3>
     <h2 class="text-center">
@@ -24,7 +24,7 @@
           <table class="example-full-width" cellspacing="0"><tr>
             <td><mat-form-field class="example-full-width" appearance="fill">
               <mat-label>First name</mat-label>
-              <input matInput formControlName="firstName">
+              <input matInput formControlName="firstName" angular-mydatepicker readonly>
               <mat-error *ngIf="firstName.invalid   && !firstName.hasError('required') ">
                 Please enter a valid Name
               </mat-error>
@@ -35,7 +35,7 @@
 
             <td><mat-form-field class="example-full-width" appearance="fill">
               <mat-label>Long Last Name character only </mat-label>
-              <input matInput formControlName="lastName">
+              <input matInput formControlName="lastName" angular-mydatepicker readonly>
               <mat-error *ngIf="lastName.invalid   && !lastName.hasError('required') ">
                 Please enter a valid Name
               </mat-error>
@@ -47,7 +47,7 @@
 
             <mat-form-field class="example-full-width" appearance="fill">
               <mat-label>Email</mat-label>
-              <input type="email" matInput formControlName="email" placeholder="Ex. pat@example.com">
+              <input type="email" matInput formControlName="email" placeholder="Ex. pat@example.com" angular-mydatepicker readonly>
               <mat-error *ngIf="email.hasError('email') ">
                 Please enter a valid email address
               </mat-error>
@@ -55,7 +55,7 @@
                 Email is <strong>required</strong>
               </mat-error>
             </mat-form-field>
-            <div formGroupName="shippingAdress">
+            <div formGroupName="shippingAddress">
 
 
               <mat-form-field class="example-full-width" appearance="fill">
@@ -119,6 +119,14 @@
             </mat-form-field></td>
           </tr></table>
         </div>
+      <div class="btn-container" >
+        <button
+         [disabled]="firstName?.invalid|| lastName?.invalid || email?.invalid || address?.invalid || city?.invalid
+         || country?.invalid || mobile?.invalid  || postCode?.invalid"
+          class="mt-5 mb-4 w-25  " mat-flat-button id="submit-button" >Submit</button>
+
+      </div>
+
         </form>
 
 

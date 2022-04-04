@@ -1,0 +1,76 @@
+
+
+ <div class="container mt-5">
+   <mat-form-field appearance="standard">
+     <mat-label>Filter</mat-label>
+     <input matInput (keyup)="applyFilter($event)" placeholder="status" #input>
+   </mat-form-field>
+
+   <div class="mat-elevation-z8 p-5">
+     <table mat-table [dataSource]="dataSource" matSort  >
+
+       <!-- ID Column -->
+       <ng-container matColumnDef="createdAt">
+         <th mat-header-cell class="" *matHeaderCellDef mat-sort-header>{{"createdAt" |uppercase}}</th>
+         <td mat-cell *matCellDef="let row"> {{row.createdAt}} </td>
+       </ng-container>
+
+
+
+       <ng-container matColumnDef="isDeliverd">
+         <th mat-header-cell *matHeaderCellDef mat-sort-header>{{"isDeliverd" | uppercase}}</th>
+         <td mat-cell *matCellDef="let row"> {{row.isDeliverd}}</td>
+       </ng-container>
+       <!-- Name Column -->
+       <ng-container matColumnDef="isPayment">
+         <th mat-header-cell *matHeaderCellDef mat-sort-header> isPayment</th>
+         <td mat-cell *matCellDef="let row"> {{row.isPayment}} </td>
+       </ng-container>
+
+       <!-- Fruit Column -->
+       <ng-container matColumnDef="taxPrice">
+         <th mat-header-cell *matHeaderCellDef mat-sort-header>{{"taxPrice"|uppercase}} </th>
+         <td mat-cell *matCellDef="let row" > {{row.taxPrice}} </td>
+       </ng-container>
+
+       <ng-container class="" matColumnDef="totalPrice">
+         <th  class=""mat-header-cell *matHeaderCellDef mat-sort-header >{{"totalPrice" |uppercase}} </th>
+         <td mat-cell *matCellDef="let row"  class=""> {{row.totalPrice}} </td>
+       </ng-container>
+       <ng-container  class="" matColumnDef="{{'status'}}">
+        <th  class=""mat-header-cell *matHeaderCellDef mat-sort-header >{{"status"|uppercase}} </th>
+
+        <td    mat-cell *matCellDef="let row"  class=""> {{row.status}} </td>
+
+
+
+
+      </ng-container>
+
+       <ng-container  matColumnDef="action">
+         <th mat-header-cell *matHeaderCellDef mat-sort-header >{{"action"|uppercase}}</th>
+         <td mat-cell *matCellDef="let row" >
+
+
+           <button mat-icon-button color="warn" >
+             <mat-icon (click)="deleteOrder(row?._id)" >delete</mat-icon>
+           </button>
+         </td>
+       </ng-container>
+
+       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+       <!-- Row shown when there is no matching data. -->
+       <tr class="mat-row" *matNoDataRow>
+         <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+       </tr>
+     </table>
+
+     <mat-paginator #scheduledOrdersPaginator [pageSize]="8"  [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users" showFirstLastButtons></mat-paginator>
+   </div>
+
+ </div>
+
+
+

@@ -4,15 +4,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: $main-color;
+
+  background-color: #293240;
   height: 100vh;
  .button-center{
    text-align: center;
 
    button{
      width:50% ;
-     background-color: white;
-     color: black;
+     background-color: #317ECE;
+     color: white;
     font-weight: 500;
    }
  }
@@ -22,8 +23,9 @@
  }
  .new-acount span{
    margin-left: 1rem;
-   color: #024172;
+  //  color: #024172;
    font-weight: 700;
+   text-decoration: underline;
    cursor: pointer;
  }
  .message-valid{
@@ -34,4 +36,13 @@
 }
 .form-caption{
   width:350px;
+}
+
+.image-login{
+ 
+  img{
+    width:100px;
+    height:100px;
+
+  }
 }

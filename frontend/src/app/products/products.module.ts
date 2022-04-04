@@ -12,12 +12,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ConfirmComponent } from './components/confirm/confirm.component';
 
+// import { NgxMaterialRatingModule } from 'ngx-material-rating';
 
 @NgModule({
   declarations: [
     ProductsComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    ConfirmComponent,
+ 
   ],
   imports: [
 
@@ -26,6 +30,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NgxPaginationModule,
     SharedModule,
     NgbModule,
+    // NgxMaterialRatingModule,
     // BrowserAnimationsModule,
     NgxSmartModalModule.forRoot()
   ],

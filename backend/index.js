@@ -7,6 +7,7 @@ const handleError=require('./src/middelewares/handelError')
 
 const authRouter=require('./src/routes/login')
 const productRouter=require("./src/routes/product")
+const orderRouter=require('./src/routes/order')
 const responseTime=require('response-time')
 var cors = require('cors')
 
@@ -28,6 +29,7 @@ app.use('/user',userRouter)
 app.use('/products',productRouter)
 
 app.use('/login',authRouter)
+app.use('/order', orderRouter)
 app.use(handleError)
 
 

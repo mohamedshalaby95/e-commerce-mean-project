@@ -1,6 +1,7 @@
 import { authService } from './../../auth/services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CartService } from 'src/app/cart/services/cart.service';
 
 @Component({
   selector: 'app-header',
@@ -10,13 +11,18 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
 
 nameUser:string;
+public totalItem : number = 0
 
-  constructor(private authService:authService,private router:Router) {
+  constructor(private authService:authService,private router:Router, private cartService : CartService) {
+
   }
 
   ngOnInit(): void {
 
+    this.cartService.getProducts().subscribe(res => {
 
+      this.totalItem = res.length |0
+    })
 
   }
   getUserName(){
@@ -37,11 +43,18 @@ this.router.navigate([''])
  goTOLogin(){
   this.router.navigate(['login'])
 }
-goToControll(){
-  this.router.navigate(['admin'])
+
+
+gotoCart(){
+  this.router.navigate(['cart'])
+
 }
-gotoProducts(){
-  this.router.navigate(['products'])
+
+ToggleNavbar(){
+  console.log("here")
+}
+goToProfile(){
+  this.router.navigate(['profile'])
 }
 
 }

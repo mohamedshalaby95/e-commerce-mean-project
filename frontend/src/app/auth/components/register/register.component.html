@@ -1,5 +1,8 @@
 <div class="form-container">
   <div class="form-caption">
+    <div class="image-login d-flex justify-content-center mb-5">
+      <img  src="assets/images/profile.png" alt="login image">
+    </div>
     <form  [formGroup]="registerForm" (ngSubmit)="submitForm()" >
 
 
@@ -75,7 +78,7 @@
      </div>
      <div class="field">
        <p class="control button-center">
-         <button [disabled]="password?.invalid || email?.invalid ||firstName?.invalid || lastName?.invalid" class="button is-success mt-3 is-full" type="submit">
+         <button [disabled]="password?.invalid || email?.invalid ||firstName?.invalid || lastName?.invalid" class="button is-success mt-3 is-full text-white" type="submit">
            Register
          </button>
        </p>
