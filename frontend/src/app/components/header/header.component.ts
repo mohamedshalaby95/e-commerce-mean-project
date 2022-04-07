@@ -19,9 +19,9 @@ public totalItem : number = 0
 
   ngOnInit(): void {
 
-    this.cartService.getProducts().subscribe(res => {
+    this.cartService.getProducts()?.subscribe(res => {
 
-      this.totalItem = res.length |0
+      this.totalItem = res.length
     })
 
   }
@@ -50,9 +50,7 @@ gotoCart(){
 
 }
 
-ToggleNavbar(){
-  console.log("here")
-}
+
 goToProfile(){
   this.router.navigate(['profile'])
 }

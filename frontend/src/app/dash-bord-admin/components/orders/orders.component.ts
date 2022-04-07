@@ -51,7 +51,7 @@ export class OrdersComponent implements OnInit ,AfterViewInit{
 
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
-    console.log(this.dataSource.filter)
+   
 
     if (filterValue) {
       // console.log(this.dataSource.paginator.firstPage())
@@ -60,7 +60,7 @@ export class OrdersComponent implements OnInit ,AfterViewInit{
     }
   }
   updateProduct(row:Iproduct){
-    console.log(row)
+
     this.dialog.open(DialogComponent, {
 
        width:'50%',

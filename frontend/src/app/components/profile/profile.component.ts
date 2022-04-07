@@ -1,4 +1,5 @@
-import { Iuser } from './../../shared/user.type';
+import { IprofileOrder } from './../../order/models/orderData';
+import { Iuser } from './../../shared/models/userData-model';
 import { Component, OnInit } from '@angular/core';
 import { ProfileService } from 'src/app/app-services/profile.service';
 import { Iorder } from 'src/app/order/models/orderData';
@@ -9,17 +10,18 @@ import { Iorder } from 'src/app/order/models/orderData';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-  orders:any
-  dataUser:any
+  orders:[IprofileOrder]
+  dataUser:Iuser
   constructor(private profileService:ProfileService) { }
 
   ngOnInit(): void {
     this.dataUser=JSON.parse(localStorage.getItem('dataUser'))
+
     this.getOrders()
   }
 
   getNameUser(){
-    return this.dataUser?.firstName
+    return this.dataUser.firstName
   }
   getEmail(){
     return this.dataUser?.email

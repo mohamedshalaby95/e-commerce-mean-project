@@ -17,3 +17,17 @@ interface Iorder {
 
 
 }
+
+export interface IprofileOrder{
+  createdAt:string,
+  isDeliverd:boolean;
+  isPayment:string;
+  orderitems:any;
+  shippingPrice:number;
+  status:string;
+  taxPrice:number;
+  totalPrice:number;
+  updatedAt:string;
+  user:string
+  _id:string
+}

@@ -84,7 +84,7 @@ export class ProductsComponent implements OnInit {
     console.log("here")
     this.cartService.getProducts().subscribe(res => {
       this.cartItems = res;
-      // console.log(this.cartItems)
+   
 
     })
   const flag=  this.cartItems.some((cartProduct)=>{
@@ -92,17 +92,16 @@ export class ProductsComponent implements OnInit {
     })
 
     if(flag){
-    // alert("this product  in your cart are u want to increase by 1")
      this.dialog.open(ConfirmComponent,{
       data:product,
       width:'30%'
 
      }).afterClosed().subscribe(result => {
       if(result == !true){
-        console.log("true")
+
         return true;
       }else{
-        console.log("false")
+
         return false;
       }
     })

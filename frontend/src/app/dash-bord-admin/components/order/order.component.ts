@@ -41,7 +41,7 @@ export class OrderComponent implements OnInit {
     this.adminService.getAllOrders().subscribe({
 
   next:(res)=>{
-   
+
     this.dataSource=new MatTableDataSource<Iproduct>(res);
 
     setTimeout(() => {
@@ -70,10 +70,5 @@ export class OrderComponent implements OnInit {
       alert(" something get wrong when delete")
     })
 }
-deleteProduct(id:string){
 
-}
-updateProduct(id:string){
-
-}
 }

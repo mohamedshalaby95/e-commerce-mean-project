@@ -4,14 +4,11 @@
 
     </mat-sidenav>
   <mat-sidenav-content >
-    <!-- <router-outlet  name="dashbord"></router-outlet> -->
+
       <router-outlet ></router-outlet>
 
-    <app-orders></app-orders>
+    <app-orders *ngIf="flag"></app-orders>
 
   </mat-sidenav-content>
 </mat-sidenav-container>
-<!-- <app-side-navbar> </app-side-navbar>
-<router-outlet name="dashbord"></router-outlet> -->
- <!-- <router-outlet name="foo"></router-outlet> -->
-<!--<router-outlet name="bar"></router-outlet> -->
+

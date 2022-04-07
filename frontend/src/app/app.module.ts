@@ -14,6 +14,7 @@ import { SharedModule } from './shared/shared.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 // import { NgxMaterialRatingModule } from 'ngx-material-rating';
 // import {NgxPaginationModule} from 'ngx-pagination';
 
@@ -27,6 +28,7 @@ import { ProfileComponent } from './components/profile/profile.component';
       HomeComponent,
       FooterComponent,
       ProfileComponent,
+      NotFoundComponent,
 
 
 

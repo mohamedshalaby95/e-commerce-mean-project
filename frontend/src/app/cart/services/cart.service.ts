@@ -21,9 +21,10 @@ export class CartService {
 
   getTotalPrice() : number{
     let grandTotal = 0
-    JSON.parse(localStorage?.getItem('cart')).map((product:IcartProducts) =>{
+    JSON.parse(localStorage?.getItem('cart'))?.map((product:IcartProducts) =>{
       grandTotal += (product.price * product.quantity) ;
     })
+    console.log(grandTotal)
     return grandTotal
   }
 
@@ -51,7 +52,7 @@ export class CartService {
       localStorage.setItem('cart',JSON.stringify(this.products))
 
       this.productList.next(JSON.parse(localStorage.getItem('cart')));
-      // this.getTotalPrice();
+      this.getTotalPrice();
     }
     else{
      this.products= []

@@ -18,7 +18,8 @@ export class CartComponent implements OnInit {
     this.cartService.getProducts().subscribe(res => {
       this.products = res;
       this.grandTotal =JSON.parse(localStorage.getItem('cart'))?.length|0
-      // this.cartService.getTotalPrice()
+      this.cartService.getTotalPrice()
+     this.grandTotal= this.cartService.getTotalPrice()
     })
   }
 
@@ -44,7 +45,7 @@ export class CartComponent implements OnInit {
 
 
   decriseQuantity(item: IcartProducts) {
-    // console.log(item)
+    
     const updatedItem = this.products.map((el: any) => {
       return item._id == el._id ? { ...el, quantity: el.quantity - 1 } : { ...el }
     })

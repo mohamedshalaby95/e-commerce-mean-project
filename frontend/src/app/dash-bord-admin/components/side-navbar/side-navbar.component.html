@@ -7,9 +7,11 @@
 </div>
 
 <ul class=" mt-5">
-<li class="active m-5">Products</li>
+<li  [routerLinkActiveOptions]="{exact:true}" routerLink='/admin' routerLinkActive="active"  class="active m-5 text-white">Products</li>
 <hr />
-<li class="m-5">Order</li>
+<li  [routerLinkActiveOptions]="{exact:true}" routerLink="/admin/order" routerLinkActive="active" class="m-5 text-white">Order</li>
+<hr />
+<li  [routerLinkActiveOptions]="{exact:true}" routerLink='/admin/order/pending' routerLinkActive="active" class="m-5 text-white">Order Pending</li>
 <hr />
 </ul>
 
