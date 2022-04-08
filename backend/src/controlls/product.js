@@ -51,6 +51,7 @@ async function getProductsByCategory( req,res){
   async function getProduct( req,res){
 
     const product= await ProductModel.findById({_id:req.params.id});
+  
     
    if(!product){
     res.status(400);

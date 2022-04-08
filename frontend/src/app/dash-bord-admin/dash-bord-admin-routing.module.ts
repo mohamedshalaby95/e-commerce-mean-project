@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminProductComponent } from './components/admin-product/admin-product.component';
 import { AdminGurdService } from './gaurds/admin-gurd.service';
-import { OrdersComponent } from './components/orders/orders.component';
+import { OrdersComponent } from './components/products/orders.component';
 
 
 const routes: Routes = [

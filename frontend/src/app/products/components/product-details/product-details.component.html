@@ -1,6 +1,4 @@
-<!-- <h1>{{id}}</h1>
-<h1>{{productsDetails?.name}}</h1>
-<img [src]="imagePrefix+productsDetails?.image"> -->
+
 
 <div class="container">
     <div class="row">
@@ -8,26 +6,22 @@
             <img class="img-fluid" [src]="imagePrefix+productsDetails?.image">
         </div>
         <div class="col-md-6">
-            <h1>{{productsDetails?.brand}}</h1>
+            <h1 class="color-heading">{{productsDetails?.brand}}</h1>
+            <p> <strong>Description</strong> : {{productsDetails?.description}}</p>
+            <p><strong>price</strong> : ${{productsDetails?.price  }}</p>
             <h6 *ngIf="productsDetails?.countInStock">
-                <strong class="available">In Stock:</strong> {{productsDetails?.countInStock}}
+                <strong class="available fs-6">In Stock:</strong> <span class="fs-6 ms-1 " >{{productsDetails?.countInStock}}</span>
             </h6>
             <h6 class="text-danger" *ngIf="productsDetails?.countInStock===0">
                 <strong class="notavailable">In Stock:</strong> Not Available
             </h6>
-            <p> <strong>Description</strong> : {{productsDetails?.description}}</p>
-            <p><strong>price</strong> : ${{productsDetails?.price  }}</p>
             <p><strong>Category</strong> : {{productsDetails?.category }}</p>
-                <button class="btn btn-success" [disabled]="productsDetails?.countInStock === 0">Add To Cart</button>
+              <div class="button-details mt-5">
+                <button (click)="addToCart()" class="btn  add-button" [disabled]="productsDetails?.countInStock === 0">Add To Cart</button>
+                <button routerLink="/products" class="btn  ms-2  shoping-button" >Go Shoping </button>
+              </div>
         </div>
     </div>
 </div>
 
-<!-- brand: "asus"
-category: "laptop"
-countInStock: 4
-description: "a new lap with good processor "
-image: "1.jpg"
-name: "laptop"
-price: 20000
-rating: 8 -->
+

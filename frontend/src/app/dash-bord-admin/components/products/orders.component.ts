@@ -1,7 +1,7 @@
 
-import { AdminServicesService } from './../../services/admin-services.service';
-import { Iproduct } from './../../../products/models/product';
-import { DialogComponent } from './../dialog/dialog.component';
+import { AdminServicesService } from '../../services/admin-services.service';
+import { Iproduct } from '../../../products/models/product';
+import { DialogComponent } from '../dialog/dialog.component';
 import { AfterViewInit, ChangeDetectorRef, Component, OnInit,ViewChild } from '@angular/core';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {MatPaginator} from '@angular/material/paginator';
@@ -51,7 +51,7 @@ export class OrdersComponent implements OnInit ,AfterViewInit{
 
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
-   
+
 
     if (filterValue) {
       // console.log(this.dataSource.paginator.firstPage())

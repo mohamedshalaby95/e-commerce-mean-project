@@ -16,7 +16,7 @@ export class ProductsService {
   }
 
   getProductsDetails(id:string): Observable<Products>{
-    return this._http.get<Products>(`${environment.baseUrl}/products/${id}`)
+    return this._http.get<Products>(`${environment.baseUrl}/products/product/${id}`)
   }
   getProductBYCategory(category:string): Observable<Products[]>{
     return this._http.get<Products[]>(`${environment.baseUrl}/products/${category}`)

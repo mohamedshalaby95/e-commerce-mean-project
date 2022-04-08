@@ -6,9 +6,9 @@ const {addProduct,getProducts,getProduct,deleteProduct,updateProduct,getProducts
 router.post('/',[auth,adminAuth],addProduct)
 
 router.get('/',getProducts)
-router.get('/:category',getProductsByCategory)
+ router.get('/:category',getProductsByCategory)
 
-router.get('/:id',getProduct)
+router.get('/product/:id',getProduct)
 router.delete('/:id',[auth,adminAuth],deleteProduct)
 router.patch('/:id',[auth,adminAuth],updateProduct)
 

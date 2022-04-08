@@ -9,7 +9,7 @@ import { OrderComponent } from './components/order/order.component';
 import { DashbordComponent } from './components/dashbord/dashbord.component';
 import { SideNavbarComponent } from './components/side-navbar/side-navbar.component';
 import { PendingOrdersComponent } from './components/pending-orders/pending-orders.component';
-import { OrdersComponent } from './components/orders/orders.component';
+import { OrdersComponent } from './components/products/orders.component';
 
 
 
