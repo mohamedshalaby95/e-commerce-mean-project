@@ -11,7 +11,11 @@
 .select {
 
 }
-.imag-input{
-  position: absolute;
-  left: 50%;
+// .imag-input{
+//   position: absolute;
+//   left: 50%;
+// }
+input[type="file"] {
+  border: none !important;
+  width: 100px;
 }

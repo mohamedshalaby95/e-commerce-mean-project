@@ -14,6 +14,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import {MatInputModule} from '@angular/material/input';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { SomethingWrongComponent } from './components/something-wrong/something-wrong.component';
 
 // import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -26,7 +27,9 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    SomethingWrongComponent
+  ],
   imports: [
     CommonModule,
     MatDialogModule

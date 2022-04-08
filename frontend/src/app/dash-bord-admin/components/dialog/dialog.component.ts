@@ -36,7 +36,7 @@ export class DialogComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.updateProduct)
+
 
     if(this.updateProduct){
      this.productForm.get('name').setValue(this.updateProduct.name)
@@ -77,12 +77,22 @@ get countInStock(){
 }
 
 submitForm(){
+
+
+
+  let image=this.productForm.get('image').value.substring(12)
+
+
+  const{ name,description,price,countInStock,brand, category}=this.productForm.value
+
 if(this.actionBtn==='Save'){
 
-  this.adminService.addProduct(this.productForm.value).subscribe(()=>{
+
+
+  this.adminService.addProduct({name,description,price,countInStock,brand, category,image}).subscribe(()=>{
     this.productForm.reset();
     this.dialogRef.close(true);
-    // console.log(this.productForm.value)
+ 
 
   },(err)=>{
     alert((JSON.stringify(err.error.message) ))

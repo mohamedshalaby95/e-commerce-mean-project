@@ -1,6 +1,6 @@
 import { Router } from '@angular/router';
 
-import {ChangeDetectorRef, Component, OnChanges, OnDestroy, OnInit, SimpleChanges} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 
 
 @Component({
@@ -8,7 +8,7 @@ import {ChangeDetectorRef, Component, OnChanges, OnDestroy, OnInit, SimpleChange
   templateUrl: './dashbord.component.html',
   styleUrls: ['./dashbord.component.scss']
 })
-export class DashbordComponent implements OnInit,OnChanges {
+export class DashbordComponent implements OnInit {
 
  flag: boolean=true;
 
@@ -20,11 +20,9 @@ export class DashbordComponent implements OnInit,OnChanges {
   ngOnInit(): void {
 this.flag=true;
   }
-  ngOnChanges(changes: SimpleChanges): void {
 
-  }
 ngAfterContentChecked(): void {
-  console.log(this.router.url)
+
   if(this.router.url !=='/admin'){
         this.flag=false;
   }

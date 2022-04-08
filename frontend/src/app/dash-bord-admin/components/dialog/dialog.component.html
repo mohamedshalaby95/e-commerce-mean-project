@@ -34,9 +34,13 @@
       </p>
     </div>
 
-    <div class="field position-relative">
+    <!-- <div class="field ">
       <p class="control has-icons-left has-icons-right">
-        <input class="imag-input" class="input is-info" type="file" accept="image/png, image/jpeg,image/jpg" placeholder="Image" formControlName="image">
+
+        <input class="imag-input" class="input is-info  " style=' overflow:hidden;' type="text" accept="image/png, image/jpeg,image/jpg" placeholder="Image" formControlName="image">
+
+
+
         <span *ngIf="image?.valid "class="icon is-small is-right">
           <i class="fas fa-check"></i>
         </span>
@@ -44,7 +48,14 @@
           This not valid path image
         </span>
       </p>
+    </div> -->
+
+
+    <div class="input-group mb-3">
+      <input type="file" class="form-control" id="inputGroupFile02" accept="image/png, image/jpeg,image/jpg" formControlName="image">
+      <label class="input-group-text ms-2 btn btn-primary" for="inputGroupFile02">Upload Image</label>
     </div>
+
 
     <div class="field">
       <p class="control has-icons-left has-icons-right">
