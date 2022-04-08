@@ -1,58 +1,59 @@
-
-
 <div class="container product-screen mb-5">
 
   <div class="row">
     <div class=" w-50  m-auto">
 
-        <input type="text"  class="form-control mb-5 mt-5" name="brand" [(ngModel)]="brand" (ngModelChange)="search()" placeholder="Enter Brand To search">
-        <select  (change)="selectChangeHandler($event)" class="form-select form-select-sm mb-3" aria-label=".form-select-sm example">
-          <option selected>Choose By Category</option>
-          <option value="Mobile" >Mobile</option>
-          <option value="LapTop"  >Lap Top</option>
-          <option value="Ipad"  >IPad</option>
-        </select>
+      <input type="text" class="form-control mb-5 mt-5" name="brand" [(ngModel)]="brand" (ngModelChange)="search()"
+        placeholder="Enter Brand To search">
+      <select (change)="selectChangeHandler($event)" class="form-select form-select-sm mb-3"
+        aria-label=".form-select-sm example">
+        <option selected>Choose By Category</option>
+        <option value="Mobile">Mobile</option>
+        <option value="LapTop">Lap Top</option>
+        <option value="Ipad">IPad</option>
+      </select>
     </div>
   </div>
-    <div class="row">
-        <div *ngFor="let product of products  | paginate: { itemsPerPage: 6, currentPage: p } " class="col-md-4">
+  <div class="row">
+    <div *ngFor="let product of products  | paginate: { itemsPerPage: 6, currentPage: p } " class="col-md-4">
 
-            <div class="card text-center">
-                <img [src]="imagePrefix+product?.image" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">{{product?.brand}}</h5>
-                    <p class="card-text">{{product?.description}}</p>
-                    <strong>${{product?.price |number }}</strong>
+      <div class="card text-center">
+        <img [src]="imagePrefix+product?.image" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">{{product?.brand}}</h5>
+          <p class="card-text">{{product?.description}}</p>
+          <strong>${{product?.price |number }}</strong>
 
 
 
-                    <p *ngIf="product?.countInStock">
-                        <span class="available">stock:</span> {{product?.countInStock}}
-                    </p>
-                    <p class="text-danger" *ngIf="product?.countInStock===0">
-                        <span class="notavailable">stock:</span> Not Available
-                    </p>
-                    <ngb-rating class="mb-4" [(rate)]="product.rating" [max]="5">
-                      <ng-template let-fill="fill" let-index="index">
-                        <span class="star" [class.filled]="fill === 100" [class.bad]="index < 3">&#9733;</span>
-                      </ng-template>
-                    </ngb-rating>
+          <p *ngIf="product?.countInStock">
+            <span class="available">stock:</span> {{product?.countInStock}}
+          </p>
+          <p class="text-danger" *ngIf="product?.countInStock===0">
+            <span class="notavailable">stock:</span> Not Available
+          </p>
+          <ngb-rating class="mb-4" [(rate)]="product.rating" [max]="5">
+            <ng-template let-fill="fill" let-index="index">
+              <span class="star" [class.filled]="fill === 100" [class.bad]="index < 3">&#9733;</span>
+            </ng-template>
+          </ngb-rating>
 
-                    <div class="buttons">
-                        <button [routerLink]="['/productDetails', product?._id]" class="btn btn-primary"> View </button>
-                    <button class="btn btn-success"  [disabled]="product?.countInStock===0" (click)="addToCart(product)" >Add To Cart</button>
-                    </div>
+          <div class="buttons">
+            <button [routerLink]="['/productDetails', product?._id]" class="btn btn-primary"> View </button>
+            <button class="btn btn-success" [disabled]="product?.countInStock===0" (click)="addToCart(product)">Add To
+              Cart</button>
+          </div>
 
-                </div>
-            </div>
         </div>
-        <div class="data-match"*ngIf="products.length==0">
-         <img src="assets/images/nodatamatch.jpg" />
-        </div>
-
       </div>
-      <div  class="  w-25 m-auto mt-5 mb-5 test-center">
-           <ngb-pagination  [ngClass]="{'pagination-display': products.length===0}"  [collectionSize]="numPages" [(page)]="p" ></ngb-pagination>
-         </div>
-</div>
+    </div>
+    <div class="data-match" *ngIf="products.length==0">
+      <img src="assets/images/nodatamatch.jpg" />
+    </div>
 
+  </div>
+  <div class="  w-25 m-auto mt-5 mb-5 test-center">
+    <ngb-pagination [ngClass]="{'pagination-display': products.length===0}" [collectionSize]="numPages" [(page)]="p">
+    </ngb-pagination>
+  </div>
+</div>

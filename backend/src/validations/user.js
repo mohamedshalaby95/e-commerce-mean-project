@@ -15,11 +15,10 @@ module.exports = (body) => {
     shippingAdress: {
       address: Joi.string(),
       country: Joi.string(),
-      city:Joi.string(),
+      city: Joi.string(),
       mobile: Joi.string(),
       postCode: Joi.string(),
     },
-
   });
   return Schema.validate(body);
 };

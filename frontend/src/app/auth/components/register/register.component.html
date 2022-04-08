@@ -1,23 +1,23 @@
 <div class="form-container">
   <div class="form-caption">
     <div class="image-login d-flex justify-content-center mb-5">
-      <img  src="assets/images/profile.png" alt="login image">
+      <img src="assets/images/profile.png" alt="login image">
     </div>
-    <form  [formGroup]="registerForm" (ngSubmit)="submitForm()" >
+    <form [formGroup]="registerForm" (ngSubmit)="submitForm()">
 
 
 
       <div class="field">
         <label class="label">First Name</label>
         <div class="control has-icons-left has-icons-right">
-          <input class="input is-success" type="text" placeholder="Frist Name" formControlName="firstName" >
+          <input class="input is-success" type="text" placeholder="Frist Name" formControlName="firstName">
           <span class="icon is-small is-left">
             <i class="fas fa-user"></i>
           </span>
           <span *ngIf=" firstName?.valid " class="icon is-small is-right">
-            <i   class="fas fa-check"></i>
+            <i class="fas fa-check"></i>
           </span>
-          <span class="message-valid"  *ngIf=" firstName?.invalid && firstName?.touched">
+          <span class="message-valid" *ngIf=" firstName?.invalid && firstName?.touched">
             This not valid name
           </span>
         </div>
@@ -29,13 +29,13 @@
         <p class="control has-icons-left has-icons-right">
           <input class="input is-success" type="text" placeholder="Last Name" formControlName="lastName">
           <span class="icon is-small is-left">
-            <i  class="fas fa-user"></i>
+            <i class="fas fa-user"></i>
           </span>
           <span *ngIf="lastName?.valid" class="icon is-small is-right">
 
-            <i  class="fas fa-check"></i>
+            <i class="fas fa-check"></i>
           </span>
-          <span class="message-valid"  *ngIf="lastName?.invalid && lastName?.touched">
+          <span class="message-valid" *ngIf="lastName?.invalid && lastName?.touched">
             This not valid name
           </span>
         </p>
@@ -44,45 +44,46 @@
 
 
 
-     <div class="field">
-      <label class="label">Email</label>
-       <p class="control has-icons-left has-icons-right">
-         <input class="input" type="email" placeholder="Email" formControlName="email">
-         <span class="icon is-small is-left">
-           <i class="fas fa-envelope"></i>
-         </span>
-         <span *ngIf="email?.valid "class="icon is-small is-right">
-           <i class="fas fa-check"></i>
-         </span>
+      <div class="field">
+        <label class="label">Email</label>
+        <p class="control has-icons-left has-icons-right">
+          <input class="input" type="email" placeholder="Email" formControlName="email">
+          <span class="icon is-small is-left">
+            <i class="fas fa-envelope"></i>
+          </span>
+          <span *ngIf="email?.valid " class="icon is-small is-right">
+            <i class="fas fa-check"></i>
+          </span>
 
-        <span class="message-valid"  *ngIf="email?.invalid &&email?.touched">
-             This not valid email
-           </span>
+          <span class="message-valid" *ngIf="email?.invalid &&email?.touched">
+            This not valid email
+          </span>
 
-       </p>
-     </div>
-     <div class="field">
-      <label class="label">Password</label>
-       <p class="control has-icons-left has-icons-right">
-         <input class="input" type="password" placeholder="Password" formControlName="password">
-         <span class="icon is-small is-left">
-           <i class="fas fa-lock"></i>
-         </span>
-         <span *ngIf="password?.valid "class="icon is-small is-right">
-          <i class="fas fa-check"></i>
-        </span>
-         <span  class="message-valid" *ngIf="password?.invalid &&password?.touched">
-           This not valid password
-         </span>
-       </p>
-     </div>
-     <div class="field">
-       <p class="control button-center">
-         <button [disabled]="password?.invalid || email?.invalid ||firstName?.invalid || lastName?.invalid" class="button is-success mt-3 is-full text-white" type="submit">
-           Register
-         </button>
-       </p>
-     </div>
+        </p>
+      </div>
+      <div class="field">
+        <label class="label">Password</label>
+        <p class="control has-icons-left has-icons-right">
+          <input class="input" type="password" placeholder="Password" formControlName="password">
+          <span class="icon is-small is-left">
+            <i class="fas fa-lock"></i>
+          </span>
+          <span *ngIf="password?.valid " class="icon is-small is-right">
+            <i class="fas fa-check"></i>
+          </span>
+          <span class="message-valid" *ngIf="password?.invalid &&password?.touched">
+            This not valid password
+          </span>
+        </p>
+      </div>
+      <div class="field">
+        <p class="control button-center">
+          <button [disabled]="password?.invalid || email?.invalid ||firstName?.invalid || lastName?.invalid"
+            class="button is-success mt-3 is-full text-white" type="submit">
+            Register
+          </button>
+        </p>
+      </div>
 
 
 
@@ -90,13 +91,4 @@
 
     </form>
   </div>
- </div>
-
-
-
-
-
-
-
-
-
+</div>

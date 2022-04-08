@@ -1,8 +1,3 @@
-.example-spacer {
-  // flex: 1 2 auto;
-  // align-items: center;
-
-}
 table {
   width: 100%;
 }
@@ -11,23 +6,24 @@ table {
   font-size: 14px;
   width: 100%;
 }
-table td {
-  // margin-left: 200px !important;
+
+table th {
+
+  margin: auto;
 }
-table th{
 
-margin: auto;
-}
- table td, th {
+table td,
+th {
 
 
 
-  vertical-align:middle;
+  vertical-align: middle;
 
 
 
 
 }
-.order-navigate{
+
+.order-navigate {
   cursor: pointer;
 }

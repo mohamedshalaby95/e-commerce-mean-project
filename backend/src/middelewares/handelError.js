@@ -1,11 +1,9 @@
-module.exports=function (err, req, res, next) {
-  
-    const statusCode = res.statusCode === 200 ? 500 : res.statusCode
+module.exports = function (err, req, res, next) {
+  const statusCode = res.statusCode === 200 ? 500 : res.statusCode;
 
-    res.status(statusCode)
+  res.status(statusCode);
 
-    res.json({
-        message: err.message
-    })
-   
-}
+  res.json({
+    message: err.message,
+  });
+};

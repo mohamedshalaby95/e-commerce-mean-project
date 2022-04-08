@@ -5,31 +5,44 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 
-// import { TodosComponent } from './todo/components/todos/todos.component';
-
-
 const routes: Routes = [
-  {path:'' ,component:HomeComponent},
-  {path:'profile' ,component:ProfileComponent},
-  {path:'notfound' ,component:NotFoundComponent},
+  { path: '', component: HomeComponent },
+  { path: 'profile', component: ProfileComponent },
+  { path: 'notfound', component: NotFoundComponent },
 
-  {path: "", loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)},
-  {path: "", loadChildren: () => import('./products/products.module').then(m => m.ProductsModule )},
-  {path: "admin", loadChildren: () => import('./dash-bord-admin/dash-bord-admin.module').then(m => m.DashBordAdminModule )},
+  {
+    path: '',
+    loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
+  },
+  {
+    path: '',
+    loadChildren: () =>
+      import('./products/products.module').then((m) => m.ProductsModule),
+  },
+  {
+    path: 'admin',
+    loadChildren: () =>
+      import('./dash-bord-admin/dash-bord-admin.module').then(
+        (m) => m.DashBordAdminModule
+      ),
+  },
 
-  { path: 'order', loadChildren: () => import('./order/order.module').then(m => m.OrderModule) ,canActivate:[authGuard] },
-  {path: "", loadChildren: () => import('./cart/cart.module').then(m => m.CartModule )},
-  {path: '404', component: NotFoundComponent},
-  {path: '**', redirectTo: '/404'}
-
-
-
-
-
+  {
+    path: 'order',
+    loadChildren: () =>
+      import('./order/order.module').then((m) => m.OrderModule),
+    canActivate: [authGuard],
+  },
+  {
+    path: '',
+    loadChildren: () => import('./cart/cart.module').then((m) => m.CartModule),
+  },
+  { path: '404', component: NotFoundComponent },
+  { path: '**', redirectTo: '/404' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

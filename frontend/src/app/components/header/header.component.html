@@ -1,31 +1,29 @@
-
-
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
-<img class="img-fluid" src="../../../assets/images/logo.png" alt="logo website">
+      <img class="img-fluid" src="../../../assets/images/logo.png" alt="logo website">
 
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center" >
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
         <li class="nav-item">
-          <!-- <a class="nav-link active" aria-current="page" href="#">Home</a> -->
-          <a  routerLinkActive="active" class="nav-link" routerLink="" [routerLinkActiveOptions]="{exact:
+
+          <a routerLinkActive="active" class="nav-link" routerLink="" [routerLinkActiveOptions]="{exact:
             true}">Home</a>
 
         </li>
         <li class="navbar-item">
-          <a  *ngIf="getRole()"  class="nav-link" routerLink="admin" routerLinkActive="active" >
+          <a *ngIf="getRole()" class="nav-link" routerLink="admin" routerLinkActive="active">
             Dash Bord
-           </a>
+          </a>
         </li>
 
         <li class="nav-item">
-          <a  class="nav-link" routerLink="products" routerLinkActive="active">
+          <a class="nav-link" routerLink="products" routerLinkActive="active">
             products
           </a>
         </li>
@@ -46,17 +44,18 @@
             <div class="navbar-item">
 
               <div class=" ms-3  ">
-               <img id="img-profile" (click)="goToProfile()" class="img-fluid rounded" src="assets/images/profile.png" alt="profile image">
+                <img id="img-profile" (click)="goToProfile()" class="img-fluid rounded" src="assets/images/profile.png"
+                  alt="profile image">
 
 
 
               </div>
-                <div class="navbar-item ms-1" >
-                  <a  class="  " class="nav-link" routerLink="profile" routerLinkActive="active">
+              <div class="navbar-item ms-1">
+                <a class="  " class="nav-link" routerLink="profile" routerLinkActive="active">
 
-                    {{ getUserName()}}
-                    </a>
-                </div>
+                  {{ getUserName()}}
+                </a>
+              </div>
 
               <div class="buttons ms-2">
 
@@ -68,11 +67,7 @@
           </div>
         </li>
 
-        <!-- <li class="nav-item">
-          <a class="navbar-item" (click)="gotoProducts()">
-            products
-          </a>
-        </li> -->
+
 
         <li class="nav-item">
           <div *ngIf="!getUserName()" class="navbar-end">

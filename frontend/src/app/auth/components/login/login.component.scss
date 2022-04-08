@@ -1,5 +1,6 @@
 @import "../../../../styles.scss";
-.form-container{
+
+.form-container {
 
   display: flex;
   align-items: center;
@@ -7,42 +8,47 @@
 
   background-color: #293240;
   height: 100vh;
- .button-center{
-   text-align: center;
 
-   button{
-     width:50% ;
-     background-color: #317ECE;
-     color: white;
-    font-weight: 500;
-   }
- }
- .new-acount{
+  .button-center {
+    text-align: center;
 
-   color: white;
- }
- .new-acount span{
-   margin-left: 1rem;
-  //  color: #024172;
-   font-weight: 700;
-   text-decoration: underline;
-   cursor: pointer;
- }
- .message-valid{
-   display: block;
-   text-align: center;
-   color:#B03D42;
- }
+    button {
+      width: 50%;
+      background-color: #317ECE;
+      color: white;
+      font-weight: 500;
+    }
+  }
+
+  .new-acount {
+
+    color: white;
+  }
+
+  .new-acount span {
+    margin-left: 1rem;
+    //  color: #024172;
+    font-weight: 700;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .message-valid {
+    display: block;
+    text-align: center;
+    color: #B03D42;
+  }
 }
-.form-caption{
-  width:350px;
+
+.form-caption {
+  width: 350px;
 }
 
-.image-login{
- 
-  img{
-    width:100px;
-    height:100px;
+.image-login {
+
+  img {
+    width: 100px;
+    height: 100px;
 
   }
 }

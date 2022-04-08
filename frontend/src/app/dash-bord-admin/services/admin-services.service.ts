@@ -32,7 +32,7 @@ export class AdminServicesService {
     return this.httpClient.get<any>(environment.baseUrl + '/order/admin' );
    }
    deleteOrder(id:string){
-    console.log(id)
+
     return this.httpClient.delete<any>(`${environment.baseUrl}/order/${id}` );
    }
    getAllOrdersPending(){

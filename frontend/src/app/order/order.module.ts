@@ -7,20 +7,8 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { PurchaseComponent } from './components/purchase/purchase.component';
 import { PaymentComponent } from './components/payment/payment.component';
 
-
-
 @NgModule({
-  declarations: [
-
-
-    CheckoutComponent,
-      PurchaseComponent,
-      PaymentComponent
-  ],
-  imports: [
-    CommonModule,
-    SharedModule,
-    OrderRoutingModule
-  ]
+  declarations: [CheckoutComponent, PurchaseComponent, PaymentComponent],
+  imports: [CommonModule, SharedModule, OrderRoutingModule],
 })
-export class OrderModule { }
+export class OrderModule {}

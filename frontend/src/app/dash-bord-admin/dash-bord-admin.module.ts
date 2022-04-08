@@ -11,8 +11,6 @@ import { SideNavbarComponent } from './components/side-navbar/side-navbar.compon
 import { PendingOrdersComponent } from './components/pending-orders/pending-orders.component';
 import { OrdersComponent } from './components/products/orders.component';
 
-
-
 @NgModule({
   declarations: [
     AdminProductComponent,
@@ -22,13 +20,7 @@ import { OrdersComponent } from './components/products/orders.component';
     SideNavbarComponent,
     PendingOrdersComponent,
     OrdersComponent,
-
   ],
-  imports: [
-    CommonModule,
-    DashBordAdminRoutingModule,
-    SharedModule
-
-  ]
+  imports: [CommonModule, DashBordAdminRoutingModule, SharedModule],
 })
-export class DashBordAdminModule { }
+export class DashBordAdminModule {}

@@ -1,78 +1,85 @@
 <div class="container">
-    <h3> </h3>
+  <h3> </h3>
   <div class="row ">
     <div class="col-md-2 "></div>
     <div class="  col-md-8 ">
       <h3 class="text-center p-4">
 
-        <i class="fas fa-truck fa-2x " ></i>
+        <i class="fas fa-truck fa-2x "></i>
 
-      <span class="ms-1  p-4 fs-4 has-text-weight-bold " >Shipping Detealis</span>
+        <span class="ms-1  p-4 fs-4 has-text-weight-bold ">Shipping Detealis</span>
 
-    </h3>
-    <h2 class="text-center">
-      Welcome
-     {{ name | uppercase}}
-      <p class="text-center">Please Enter This Information</p>
-    </h2>
-       <form [formGroup]="informationUserDate" (ngSubmit)="submitForm()">
-
-
+      </h3>
+      <h2 class="text-center">
+        Welcome
+        {{ name | uppercase}}
+        <p class="text-center">Please Enter This Information</p>
+      </h2>
+      <form [formGroup]="informationUserDate" (ngSubmit)="submitForm()">
 
 
 
-          <table class="example-full-width" cellspacing="0"><tr>
-            <td><mat-form-field class="example-full-width" appearance="fill">
-              <mat-label>First name</mat-label>
-              <input matInput formControlName="firstName" angular-mydatepicker readonly>
-              <mat-error *ngIf="firstName.invalid   && !firstName.hasError('required') ">
-                Please enter a valid Name
-              </mat-error>
-              <mat-error *ngIf="firstName.hasError('required') ">
-                firstName is <strong>required</strong>
-              </mat-error>
-            </mat-form-field></td>
-
-            <td><mat-form-field class="example-full-width" appearance="fill">
-              <mat-label>Long Last Name character only </mat-label>
-              <input matInput formControlName="lastName" angular-mydatepicker readonly>
-              <mat-error *ngIf="lastName.invalid   && !lastName.hasError('required') ">
-                Please enter a valid Name
-              </mat-error>
-              <mat-error *ngIf="lastName.hasError('required') ">
-                lastName is <strong>required</strong>
-              </mat-error>
-            </mat-form-field></td>
-          </tr></table>
-
-            <mat-form-field class="example-full-width" appearance="fill">
-              <mat-label>Email</mat-label>
-              <input type="email" matInput formControlName="email" placeholder="Ex. pat@example.com" angular-mydatepicker readonly>
-              <mat-error *ngIf="email.hasError('email') ">
-                Please enter a valid email address
-              </mat-error>
-              <mat-error *ngIf="email.hasError('required')">
-                Email is <strong>required</strong>
-              </mat-error>
-            </mat-form-field>
-            <div formGroupName="shippingAddress">
 
 
+        <table class="example-full-width" cellspacing="0">
+          <tr>
+            <td>
               <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Mobile</mat-label>
-                <span matPrefix>+02 &nbsp;</span>
-                <input type="number" matInput placeholder="mobile" formControlName="mobile">
-                <mat-icon matSuffix>mode_edit</mat-icon>
-
-                <mat-error *ngIf="mobile.invalid   && !mobile.hasError('required') ">
-                  Please enter a valid mobile
+                <mat-label>First name</mat-label>
+                <input matInput formControlName="firstName" angular-mydatepicker readonly>
+                <mat-error *ngIf="firstName.invalid   && !firstName.hasError('required') ">
+                  Please enter a valid Name
                 </mat-error>
-                <mat-error *ngIf="mobile.hasError('required')">
-                  Mobile is <strong>required</strong>
+                <mat-error *ngIf="firstName.hasError('required') ">
+                  firstName is <strong>required</strong>
                 </mat-error>
               </mat-form-field>
-              <p>
-                <mat-form-field class="example-full-width" appearance="fill">
+            </td>
+
+            <td>
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Long Last Name character only </mat-label>
+                <input matInput formControlName="lastName" angular-mydatepicker readonly>
+                <mat-error *ngIf="lastName.invalid   && !lastName.hasError('required') ">
+                  Please enter a valid Name
+                </mat-error>
+                <mat-error *ngIf="lastName.hasError('required') ">
+                  lastName is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </td>
+          </tr>
+        </table>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput formControlName="email" placeholder="Ex. pat@example.com" angular-mydatepicker
+            readonly>
+          <mat-error *ngIf="email.hasError('email') ">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="email.hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <div formGroupName="shippingAddress">
+
+
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Mobile</mat-label>
+            <span matPrefix>+02 &nbsp;</span>
+            <input type="number" matInput placeholder="mobile" formControlName="mobile">
+            <mat-icon matSuffix>mode_edit</mat-icon>
+
+            <mat-error *ngIf="mobile.invalid   && !mobile.hasError('required') ">
+              Please enter a valid mobile
+            </mat-error>
+            <mat-error *ngIf="mobile.hasError('required')">
+              Mobile is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          <p>
+            <mat-form-field class="example-full-width" appearance="fill">
               <mat-label>Address</mat-label>
               <textarea matInput placeholder="Ex. 100 Main St" formControlName="address"></textarea>
               <mat-error *ngIf="address.invalid   && !address.hasError('required') ">
@@ -83,7 +90,7 @@
               </mat-error>
             </mat-form-field>
             <mat-form-field class="example-full-width" appearance="fill">
-              <mat-label >Country</mat-label>
+              <mat-label>Country</mat-label>
               <textarea matInput placeholder="Ex. Egypt" formControlName="country"></textarea>
               <mat-error *ngIf="country.invalid   && !country.hasError('required') ">
                 Please enter a valid Country
@@ -94,46 +101,52 @@
             </mat-form-field>
           </p>
 
-          <table class="example-full-width" cellspacing="0"><tr>
-            <td><mat-form-field class="example-full-width" appearance="fill">
-              <mat-label>City</mat-label>
-              <input matInput placeholder="Ex. cairo" formControlName="city">
-              <mat-error *ngIf="city.invalid   && !city.hasError('required') ">
-                Please enter a valid City
-              </mat-error>
-              <mat-error *ngIf="city.hasError('required')">
-                City is <strong>required</strong>
-              </mat-error>
-            </mat-form-field></td>
+          <table class="example-full-width" cellspacing="0">
+            <tr>
+              <td>
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>City</mat-label>
+                  <input matInput placeholder="Ex. cairo" formControlName="city">
+                  <mat-error *ngIf="city.invalid   && !city.hasError('required') ">
+                    Please enter a valid City
+                  </mat-error>
+                  <mat-error *ngIf="city.hasError('required')">
+                    City is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+              </td>
 
-            <td><mat-form-field class="example-full-width" appearance="fill">
-              <mat-label>Postal Code</mat-label>
-              <input matInput #postalCode maxlength="5" placeholder="Ex. 94105" value="94043" formControlName="postCode">
-              <mat-error *ngIf="postCode.invalid   && !postCode.hasError('required') ">
-                Please enter a valid postCode
-              </mat-error>
-              <mat-error *ngIf="postCode.hasError('required')">
-                postCode is <strong>required</strong>
-              </mat-error>
-              <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
-            </mat-form-field></td>
-          </tr></table>
+              <td>
+                <mat-form-field class="example-full-width" appearance="fill">
+                  <mat-label>Postal Code</mat-label>
+                  <input matInput #postalCode maxlength="5" placeholder="Ex. 94105" value="94043"
+                    formControlName="postCode">
+                  <mat-error *ngIf="postCode.invalid   && !postCode.hasError('required') ">
+                    Please enter a valid postCode
+                  </mat-error>
+                  <mat-error *ngIf="postCode.hasError('required')">
+                    postCode is <strong>required</strong>
+                  </mat-error>
+                  <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+                </mat-form-field>
+              </td>
+            </tr>
+          </table>
         </div>
-      <div class="btn-container" >
-        <button
-         [disabled]="firstName?.invalid|| lastName?.invalid || email?.invalid || address?.invalid || city?.invalid
-         || country?.invalid || mobile?.invalid  || postCode?.invalid"
-          class="mt-5 mb-4 w-25  " mat-flat-button id="submit-button" >Submit</button>
+        <div class="btn-container">
+          <button [disabled]="firstName?.invalid|| lastName?.invalid || email?.invalid || address?.invalid || city?.invalid
+         || country?.invalid || mobile?.invalid  || postCode?.invalid" class="mt-5 mb-4 w-25  " mat-flat-button
+            id="submit-button">Submit</button>
 
-      </div>
+        </div>
 
-        </form>
-
+      </form>
 
 
-      </div>
-      <div class="col-md-2 "></div>
+
     </div>
+    <div class="col-md-2 "></div>
+  </div>
 
 
 

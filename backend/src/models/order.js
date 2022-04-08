@@ -1,14 +1,14 @@
-const {Schema,model}=require('mongoose')
-const mongoose=require('mongoose')
+const { Schema, model } = require("mongoose");
+const mongoose = require("mongoose");
 
-
-
-const Order = model('Order', new Schema({
-
-    user: {
+const Order = model(
+  "Order",
+  new Schema(
+    {
+      user: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
-        ref: 'User',
+        ref: "User",
       },
       orderitems: [
         {
@@ -19,42 +19,40 @@ const Order = model('Order', new Schema({
           _id: {
             type: mongoose.Schema.Types.ObjectId,
             required: true,
-            ref: 'Product',
+            ref: "Product",
           },
         },
       ],
 
-      isDeliverd:{
-          type:Boolean,
-          default:false
+      isDeliverd: {
+        type: Boolean,
+        default: false,
       },
-      // isPayment:{
-      //     type:Boolean,
-      //     default:false,
-      // },
-      isPayment:{
-        type:String,
-        enum: ['false','true',"cash"],
-        default:'false',
-    },
-      status:{
-        type: String,
-         enum: ['pending','accept',"canncel"],
-         default:'pending'
-    },
-    taxPrice: {
-      type: Number,
-      default: 0.0,
-    
-    },
-    shippingPrice: {
-      type: Number,
-      required: true,
-    },
-    totalPrice: {
-      type: Number,
-      required: true,
-    },
 
-},{timestamps:true}));
-module.exports=Order
+      isPayment: {
+        type: String,
+        enum: ["false", "true", "cash"],
+        default: "false",
+      },
+      status: {
+        type: String,
+        enum: ["pending", "accept", "canncel"],
+        default: "pending",
+      },
+      taxPrice: {
+        type: Number,
+        default: 0.0,
+      },
+      shippingPrice: {
+        type: Number,
+        required: true,
+      },
+      totalPrice: {
+        type: Number,
+        required: true,
+      },
+    },
+    { timestamps: true }
+  )
+);
+module.exports = Order;

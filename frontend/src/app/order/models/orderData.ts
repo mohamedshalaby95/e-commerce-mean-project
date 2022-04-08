@@ -10,7 +10,7 @@ interface IorderItems {
 
 export
 interface Iorder {
-  // quantity:number,name:string,price:number,_id:string,image:string
+
   orderitems:any,
   shippingPrice:number,
   totalPrice:number

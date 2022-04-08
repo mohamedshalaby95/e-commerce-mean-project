@@ -8,16 +8,15 @@ const userSchema = new Schema({
   lastName: { type: String, required: true, minlength: 3 },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
-  isAdmin:{ type:Boolean,default:false},
+  isAdmin: { type: Boolean, default: false },
   shippingAddress: {
-    address: { type: String, default:"" },
-    country: { type: String, default:"" },
-    city: { type: String, default:"" },
-    mobile: { type: String, default:"" },
+    address: { type: String, default: "" },
+    country: { type: String, default: "" },
+    city: { type: String, default: "" },
+    mobile: { type: String, default: "" },
     postCode: { type: String },
   },
-   })
-
+});
 
 userSchema.pre("save", async function (next) {
   if (this.isModified("password")) {
@@ -31,7 +30,10 @@ userSchema.pre("save", async function (next) {
 process.env.SECERT_TOKEN;
 
 userSchema.methods.generatetoken = function () {
-  const token = jwt.sign({ _id: this._id,isAdmin:this.isAdmin }, `${process.env.SECERT_TOKEN}`);
+  const token = jwt.sign(
+    { _id: this._id, isAdmin: this.isAdmin },
+    `${process.env.SECERT_TOKEN}`
+  );
   return token;
 };
 

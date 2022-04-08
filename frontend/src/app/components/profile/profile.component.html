@@ -1,56 +1,56 @@
 <div class="container">
 
-<div class="row">
+  <div class="row">
 
-  <div class="col-md-2   ">
-    <div class="caption mt-5 mb-5 d-flex justify-content-center">
-      <img src="assets/images/profile.png" alt=" image profiel">
+    <div class="col-md-2   ">
+      <div class="caption mt-5 mb-5 d-flex justify-content-center">
+        <img src="assets/images/profile.png" alt=" image profiel">
+      </div>
+      <div class="d-flex justify-content-center flex-column align-items-center">
+        <h3 id="name-user" class="has-text-weight-bold  ">{{ getNameUser() }}</h3>
+        <h3 class="">{{ getEmail()}}</h3>
+      </div>
     </div>
-    <div class="d-flex justify-content-center flex-column align-items-center">
-      <h3 id="name-user" class="has-text-weight-bold  ">{{ getNameUser() }}</h3>
-      <h3 class="">{{ getEmail()}}</h3>
+
+    <div class="col-md-10">
+      <div class="table_responsive">
+        <h4 class="fs-5 has-text-weight-bold mt-5 mb-5">Your Orders: </h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Sl</th>
+
+              <th>createdAt</th>
+              <th>isDeliverd</th>
+              <th>isPayment</th>
+              <th>taxPrice</th>
+              <th>totalPrice</th>
+              <th>status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let order of orders ;let i =index">
+              <td>{{ i + 1 }}</td>
+              <td>{{order.createdAt}}</td>
+              <td>{{order.isDeliverd}}</td>
+              <td>{{order.isPayment}}</td>
+              <td>{{order.taxPrice}}</td>
+              <td>{{order.totalPrice}}</td>
+              <td>{{order.status}}</td>
+
+
+            </tr>
+
+            <div *ngIf="orders?.length<=0">
+              <img src="assets/images/nodatamatch.jpg" />
+            </div>
+
+
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
-
-  <div class="col-md-10">
-    <div class="table_responsive">
-      <h4 class="fs-5 has-text-weight-bold mt-5 mb-5">Your Orders: </h4>
-      <table>
-        <thead>
-          <tr>
-            <th>Sl</th>
-
-            <th>createdAt</th>
-            <th>isDeliverd</th>
-            <th>isPayment</th>
-            <th>taxPrice</th>
-            <th>totalPrice</th>
-            <th>status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let order of orders ;let i =index" >
-            <td>{{ i + 1 }}</td>
-            <td>{{order.createdAt}}</td>
-            <td>{{order.isDeliverd}}</td>
-            <td>{{order.isPayment}}</td>
-            <td>{{order.taxPrice}}</td>
-            <td>{{order.totalPrice}}</td>
-            <td>{{order.status}}</td>
-
-
-          </tr>
-
-          <div *ngIf="orders?.length<=0">
-            <img src="assets/images/nodatamatch.jpg" />
-          </div>
-
-
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
 
 
 

@@ -1,41 +1,44 @@
-#img{
+#img {
   width: 100%;
   height: 610px;
 }
-.carousel-caption
-{
+
+.carousel-caption {
   position: absolute;
   bottom: 250px;
-  p{
-      font-size: 44px;
-      color: rgba(245, 241, 241, 0.89);
-      font-weight: 50;
-      margin: 0px 0 49px;
+
+  p {
+    font-size: 44px;
+    color: rgba(245, 241, 241, 0.89);
+    font-weight: 50;
+    margin: 0px 0 49px;
 
   }
-  h1{
-      font-size: 60px;
-      font-weight: 700;
+
+  h1 {
+    font-size: 60px;
+    font-weight: 700;
   }
 }
+
 .card {
-  margin: 20px auto; /* Added */
-  float: none; /* Added */
-  margin-bottom: 10px; /* Added */
+  margin: 20px auto;
+  float: none;
+  margin-bottom: 10px;
   box-shadow: none;
   border: none;
 
-.card-img-top
-{
-  height: 230px;
+  .card-img-top {
+    height: 230px;
+  }
+
+  h5 {
+    color: #317ECE;
+  }
 }
-h5
-{
-  color: #317ECE;
-}
-}
-.card-body{
-  h5{
+
+.card-body {
+  h5 {
     font-size: 1.5rem;
   }
 }

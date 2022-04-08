@@ -1,4 +1,4 @@
-import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -10,36 +10,29 @@ import { TokenInseptorsService } from './products/inseptors/token-inseptors.serv
 import { NgxSmartModalModule } from 'ngx-smart-modal';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './components/home/home.component';
-import { SharedModule } from './shared/shared.module';
+
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-// import { NgxMaterialRatingModule } from 'ngx-material-rating';
-// import {NgxPaginationModule} from 'ngx-pagination';
-
-
 
 @NgModule({
   declarations: [
     AppComponent,
 
     HeaderComponent,
-      HomeComponent,
-      FooterComponent,
-      ProfileComponent,
-      NotFoundComponent,
-
-
-
+    HomeComponent,
+    FooterComponent,
+    ProfileComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    // NgxMaterialRatingModule ,
-    // NgxPaginationModule,
-    HttpClientModule, NgxSmartModalModule.forRoot(), BrowserAnimationsModule
+    HttpClientModule,
+    NgxSmartModalModule.forRoot(),
+    BrowserAnimationsModule,
   ],
   providers: [
     {
@@ -48,6 +41,6 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
       multi: true,
     },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

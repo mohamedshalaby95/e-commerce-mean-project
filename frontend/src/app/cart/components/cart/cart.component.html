@@ -1,12 +1,11 @@
-
 <ng-container *ngIf=" !products || products.length == 0">
   <div class="container empty-cart-caption">
     <div class="row align-items-center elimg">
       <img class="img-fluid" src="assets/images/cartempty.jpg" alt="" />
     </div>
 
-     <div class="btn-container d-flex justify-content-end" >
-    <button class="mt-5 mb-4" mat-flat-button color="primary" routerLink="/products" >Go Shopping</button>
+    <div class="btn-container d-flex justify-content-end">
+      <button class="mt-5 mb-4" mat-flat-button color="primary" routerLink="/products">Go Shopping</button>
 
     </div>
   </div>
@@ -14,84 +13,83 @@
 
 <ng-container *ngIf=" products && products.length > 0">
 
- <div class="cart-container">
+  <div class="cart-container">
 
-   <div class="container">
-     <div class="row">
-       <h2 class="text-center mt-5 mb-5">My Shipping Cart</h2>
-       <div class="col-md-9">
-        <div class="table_responsive">
-          <table>
-            <thead>
-              <tr>
-                <th>Sl</th>
-                <th>Image</th>
-                <th>Name</th>
-                <th>Unit Price</th>
-                <th>Price </th>
-                <th>Remove</th>
-                <th>Quanity</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let productItem of products ;let i =index" >
-                <td>{{ i + 1 }}</td>
-                <td><img [src]="imagePrefix + productItem?.image" alt="{{productItem.name}}"></td>
-                <td>{{productItem.name}}</td>
-                <td>{{productItem.price}}</td>
-                <td>{{ productItem?.quantity * productItem?.price | number }}</td>
-                <td> <button class="btn btn-danger" (click)="removeItem(productItem)">
-                  <i class="fa-solid fa-trash"></i>
-                </button></td>
-                <td>
-                  <span class="action_btn">
+    <div class="container">
+      <div class="row">
+        <h2 class="text-center mt-5 mb-5">My Shipping Cart</h2>
+        <div class="col-md-9">
+          <div class="table_responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>Sl</th>
+                  <th>Image</th>
+                  <th>Name</th>
+                  <th>Unit Price</th>
+                  <th>Price </th>
+                  <th>Remove</th>
+                  <th>Quanity</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let productItem of products ;let i =index">
+                  <td>{{ i + 1 }}</td>
+                  <td><img [src]="imagePrefix + productItem?.image" alt="{{productItem.name}}"></td>
+                  <td>{{productItem.name}}</td>
+                  <td>{{productItem.price}}</td>
+                  <td>{{ productItem?.quantity * productItem?.price | number }}</td>
+                  <td> <button class="btn btn-danger" (click)="removeItem(productItem)">
+                      <i class="fa-solid fa-trash"></i>
+                    </button></td>
+                  <td>
+                    <span class="action_btn">
 
-                      <button class="btn button-cart ms-2" [disabled]="productItem?.quantity === 1" (click)="decriseQuantity(productItem)">-</button>
-                     <span class="mt-2">{{productItem?.quantity}}</span>
-                      <button class="btn button-cart ms-2" [disabled]="productItem?.countInStock===productItem?.quantity" (click)="increaseQuantity(productItem)">+</button>
+                      <button class="btn button-cart ms-2" [disabled]="productItem?.quantity === 1"
+                        (click)="decriseQuantity(productItem)">-</button>
+                      <span class="mt-2">{{productItem?.quantity}}</span>
+                      <button class="btn button-cart ms-2"
+                        [disabled]="productItem?.countInStock===productItem?.quantity"
+                        (click)="increaseQuantity(productItem)">+</button>
 
-                  </span>
-                </td>
-              </tr>
+                    </span>
+                  </td>
+                </tr>
 
 
-            </tbody>
-          </table>
+              </tbody>
+            </table>
+          </div>
         </div>
-      </div>
-      <div class="col-md-3 summary mt-2 p-5">
-        <h1 class="mt-3 text-white text-center">Summary</h1>
-        <hr />
-        <div class="text-center">
-          <strong >Total Price : ${{ grandTotal | number }}</strong>
+        <div class="col-md-3 summary mt-2 p-5">
+          <h1 class="mt-3 text-white text-center">Summary</h1>
+          <hr />
+          <div class="text-center">
+            <strong>Total Price : ${{ grandTotal | number }}</strong>
 
-        </div>
+          </div>
 
           <hr />
-          <div >
-          <button class="btn button-cart w-100" (click)="emptyCart()">
-            Empty Cart
-          </button>
-        </div>
+          <div>
+            <button class="btn button-cart w-100" (click)="emptyCart()">
+              Empty Cart
+            </button>
+          </div>
           <hr />
-          <div >
+          <div>
             <button class="btn button-cart w-100" (click)="goShopping()">
               Go Shopping
             </button>
           </div>
-            <hr />
+          <hr />
           <div class="mb-5">
             <button class="btn button-cart w-100" (click)="goCheckOut()">
               Go Checkout
             </button>
           </div>
-       </div>
-     </div>
+        </div>
+      </div>
     </div>
 
   </div>
 </ng-container>
-
-
-
-
