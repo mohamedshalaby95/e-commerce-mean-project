@@ -14,6 +14,7 @@ export class CartService {
   constructor() {}
 
   getProducts() {
+
     this.productList.next(JSON.parse(localStorage.getItem('cart')));
 
     return this.productList.asObservable();
@@ -24,7 +25,7 @@ export class CartService {
     JSON.parse(localStorage?.getItem('cart'))?.map((product: IcartProducts) => {
       grandTotal += product.price * product.quantity;
     });
-    console.log(grandTotal);
+
     return grandTotal;
   }
 
@@ -56,6 +57,7 @@ export class CartService {
       this.products = [];
       this.products.push({ ...product, quantity: this.quantity });
       localStorage.setItem('cart', JSON.stringify(this.products));
+      this.getProducts()
     }
   }
 

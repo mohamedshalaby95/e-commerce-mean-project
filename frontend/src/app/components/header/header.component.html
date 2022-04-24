@@ -22,15 +22,15 @@
           </a>
         </li>
 
-        <li class="nav-item">
+        <li class="nav-item ">
           <a class="nav-link" routerLink="products" routerLinkActive="active">
             products
           </a>
         </li>
 
-        <li class=" ms-3 me-3">
+        <li class=" ms-3 me-3 mt-sm-5 mt-md-3   ">
 
-          <a class="cart-Count" (click)="gotoCart()">
+          <a class="cart-Count nav-link" (click)="gotoCart()">
             <i class="fa-solid fa-cart-shopping fa-1x text-white"></i>
             <div class="numberOfitems">
               <span class="numInCart">{{totalItem ||0}}</span>
@@ -41,27 +41,26 @@
 
         <li class="nav-item">
           <div *ngIf="getUserName()" class="navbar-end">
-            <div class="navbar-item">
+            <div class="navbar-item ">
 
-              <div class=" ms-3  ">
-                <img id="img-profile" (click)="goToProfile()" class="img-fluid rounded" src="assets/images/profile.png"
+              <div class=" ms-3  position-relative me-5 information-auth">
+                <img id="img-profile"  class="img-fluid rounded  " src="assets/images/profile.png"
                   alt="profile image">
+                  <span class="ms-5">{{getUserName()}}</span>
 
 
+                   <div  class=" profile-caption">
+                    <a class="ms-3 text-dark"  routerLink="profile" >
+                      Profile
 
-              </div>
-              <div class="navbar-item ms-1">
-                <a class="  " class="nav-link" routerLink="profile" routerLinkActive="active">
+                   </a>
+                   <hr class="mt-1 mb-1" />
+                  <a class="ms-3 text-danger" (click)="logout()">
+                    Log Out
+                  </a>
 
-                  {{ getUserName()}}
-                </a>
-              </div>
+           </div>
 
-              <div class="buttons ms-2">
-
-                <a class="button is-light" (click)="logout()">
-                  Log Out
-                </a>
               </div>
             </div>
           </div>

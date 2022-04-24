@@ -58,7 +58,7 @@ export class DialogComponent implements OnInit {
         .get('countInStock')
         .setValue(this.updateProduct.countInStock);
       this.productForm.get('category').setValue(this.updateProduct.category);
-      console.log()
+    
       this.productForm
         .get('description')
         .setValue(this.updateProduct.description);
