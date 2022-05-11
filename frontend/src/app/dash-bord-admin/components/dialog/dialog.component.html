@@ -1,6 +1,6 @@
 <div class="form-container">
   <div mat-dialog-content class="form-caption">
-    <form [formGroup]="productForm" (ngSubmit)="submitForm()">
+    <form [formGroup]="productForm " (ngSubmit)="submitForm()">
       <div class="field">
         <p class="control  has-icons-right">
           <input
@@ -38,20 +38,27 @@
         </p>
       </div>
 
-      <div class="input-group mb-3">
+      <div  [style]="{border:'1px solid blue',padding:'11px',borderRadius:'5px'}" class="input-group mb-3">
+
+        <label  for="upload-photo">Upload Image...</label>
         <input
           type="file"
           class="form-control"
-          id="inputGroupFile02"
-          accept="image/png, image/jpeg,image/jpg"
+          id="upload-photo"
           formControlName="image"
-         
+          accept="image/png, image/jpeg,image/jpg"
+
+          (click)="changeStatusUploadLabel()"
+          (change)="onImageChange($event)"
         />
-        <label
-          class="input-group-text ms-2 btn btn-primary"
-          for="inputGroupFile02"
-          >Upload Image</label
-        >
+
+
+
+          <!-- (click)=" uploadImage()" -->
+
+      </div>
+      <div *ngIf="showImage" class="image-upload">
+        <img  class="img-fluide" id="image-upload"[src]="imageUrl" />
       </div>
 
       <div class="field">
@@ -133,16 +140,18 @@
           style="margin-left: 8px"
           mat-raised-button
           color="primary"
+          
           [disabled]="
             productForm?.untouched ||
             name?.invalid ||
+
             description?.invalid ||
-            image?.invalid ||
             price?.invalid ||
             countInStock?.invalid ||
             category?.value == 'Category'
-          "
-        >
+            "
+            >
+
           {{ actionBtn }}
         </button>
       </div>

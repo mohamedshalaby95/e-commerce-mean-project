@@ -30,6 +30,7 @@
     "ngx-material-rating": "^2.0.0",
     "ngx-pagination": "^5.1.1",
     "ngx-smart-modal": "^7.4.1",
+    "ngx-spinner": "^13.1.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

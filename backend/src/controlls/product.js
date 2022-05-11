@@ -3,11 +3,13 @@ const productValidation = require("../validations/product");
 const _ = require("lodash");
 
 async function addProduct(req, res, next) {
+
   const { error } = productValidation(req.body);
   if (error) {
     res.status(400);
     throw new Error(`${error.details[0].message}`);
   }
+
 
   let product = await ProductModel(
     _.pick(req.body, [
@@ -22,12 +24,17 @@ async function addProduct(req, res, next) {
     ])
   ).save();
   res.json(product);
+
+
 }
 
 async function getProducts(req, res) {
-  const products = await ProductModel.find();
+ 
+    const products = await ProductModel.find();
+  
+    res.json(products);
 
-  res.json(products);
+  
 }
 ////////////////////////////////////////////
 

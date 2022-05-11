@@ -6,6 +6,7 @@ import { CartService } from 'src/app/cart/services/cart.service';
 import { IcartProducts } from 'src/app/cart/models/product';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmComponent } from '../confirm/confirm.component';
+import { LoaderService } from 'src/app/app-services/loader.service';
 
 @Component({
   selector: 'app-products',
@@ -27,7 +28,8 @@ export class ProductsComponent implements OnInit {
     private router: Router,
     private _products: ProductsService,
     private cartService: CartService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    public loaderService:LoaderService
   ) {
     // this.currentRate=6;
   }
@@ -98,7 +100,7 @@ export class ProductsComponent implements OnInit {
         this.cartService.addToCart(product);
       }
     } else {
-      
+
       this.cartService.addToCart(product);
     }
   }

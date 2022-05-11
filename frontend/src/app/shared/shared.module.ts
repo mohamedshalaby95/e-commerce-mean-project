@@ -14,10 +14,11 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatInputModule } from '@angular/material/input';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { SomethingWrongComponent } from './components/something-wrong/something-wrong.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [SomethingWrongComponent],
-  imports: [CommonModule, MatDialogModule],
+  imports: [CommonModule, MatDialogModule,  MatProgressSpinnerModule],
   exports: [
     HttpClientModule,
     MatPaginatorModule,
@@ -32,6 +33,8 @@ import { SomethingWrongComponent } from './components/something-wrong/something-
     MatInputModule,
     FormsModule,
     MatSidenavModule,
+
+
   ],
 })
 export class SharedModule {}

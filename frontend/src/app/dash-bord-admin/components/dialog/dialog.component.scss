@@ -14,3 +14,31 @@ input[type="file"] {
   border: none !important;
   width: 100px;
 }
+.image-upload{
+  display: flex;
+  justify-content: center;
+  height:100px;
+  width:100%;
+  margin-top: 5px;
+  margin-bottom: 15px;
+
+}
+#image-upload{
+  width:20%
+}
+label {
+  cursor: pointer;
+  /* Style as you please, it will become the visible UI component. */
+}
+
+#upload-photo {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+.label-image{
+
+  border:"2px red solid" !important;
+  width:100%
+
+}
