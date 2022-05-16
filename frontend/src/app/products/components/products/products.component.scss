@@ -1,23 +1,23 @@
 .card {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
-.card-img-top{
-    border-bottom: 1px solid black;
+.card-img-top {
+  border-bottom: 1px solid black;
 }
-.card-title{
-    text-transform: capitalize;
-    font-size: 25px;
+.card-title {
+  text-transform: capitalize;
+  font-size: 25px;
 }
-.available{
-    color: black;
-    font-weight: 700;
+.available {
+  color: black;
+  font-weight: 700;
 }
-.notavailable{
-    font-weight: 700;
+.notavailable {
+  font-weight: 700;
 }
-.buttons{
-    display: flex;
-    justify-content: space-around;
+.buttons {
+  display: flex;
+  justify-content: space-around;
 }
 .star {
   font-size: 1.5rem;
@@ -35,14 +35,19 @@
 // .product-screen{
 //   height:100vh;
 // }
-.pagination-display{
+.pagination-display {
   display: none;
-
 }
-.data-match{
+.data-match {
   display: flex;
   justify-content: center;
   align-items: center;
   // color: #ffa41c;
 }
 
+@media (max-width: 768px) {
+  #pagination-container {
+    width: 100% !important;
+  }
+  
+}

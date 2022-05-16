@@ -27,8 +27,8 @@ export class ConfirmComponent implements OnInit {
   }
 
   updateCartItem() {
-    console.log(this.addToCart);
-    // this.router.navigate([''])
+   
+
     this.cartServices.updateQuanity(this.addToCart);
     this.dialogRef.close(true);
   }

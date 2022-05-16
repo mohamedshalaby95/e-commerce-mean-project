@@ -34,11 +34,11 @@
       </ng-container>
 
       <ng-container matColumnDef="ACCEPT">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>ACCEPT</th>
+        <th  mat-header-cell *matHeaderCellDef mat-sort-header>ACCEPT</th>
         <td mat-cell *matCellDef="let row">
 
           <button mat-icon-button color="primary">
-            <button class="btn btn-primary " (click)="updateStatus('accept',row._id)"> ACCEPT</button>
+            <button id="accept-order" class="btn btn-primary " (click)="updateStatus('accept',row._id)"> ACCEPT</button>
           </button>
 
 
@@ -50,7 +50,7 @@
 
 
           <button mat-icon-button color="warn">
-            <button class="btn btn-danger" (click)="updateStatus('canncel',row._id)">Canncel</button>
+            <button id="canncel-order" class="btn btn-danger" (click)="updateStatus('canncel',row._id)">Canncel</button>
           </button>
         </td>
       </ng-container>

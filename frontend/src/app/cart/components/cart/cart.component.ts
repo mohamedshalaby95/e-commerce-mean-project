@@ -11,7 +11,7 @@ import { CartService } from '../../services/cart.service';
 export class CartComponent implements OnInit {
   public products: any = [];
   public grandTotal: number;
-  imagePrefix: string = 'assets/images/';
+ 
   constructor(private cartService: CartService, private router: Router) {}
   ngOnInit(): void {
     this.cartService.getProducts().subscribe((res) => {

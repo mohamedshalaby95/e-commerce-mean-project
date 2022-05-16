@@ -14,7 +14,7 @@ import { Iorder, IorderItems } from '../../models/orderData';
 })
 export class PurchaseComponent implements OnInit {
   products: [IcartProducts];
-  imagepath: string = environment.imagePrefix;
+
   subPrice: number;
   userData: any;
   cartItems: [IcartProducts];
@@ -33,7 +33,7 @@ export class PurchaseComponent implements OnInit {
   ngOnInit(): void {
     this.cartService.getProducts().subscribe((res) => {
       this.products = res;
-      console.log(this.products);
+
     });
     this.subPrice = this.cartService.getTotalPrice();
     this.userData = JSON.parse(localStorage.getItem('dataUser'));

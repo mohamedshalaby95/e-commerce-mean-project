@@ -18,7 +18,7 @@
     <div *ngFor="let product of products  | paginate: { itemsPerPage: 6, currentPage: p } " class="col-md-4">
 
       <div class="card text-center">
-        <img [src]="imagePrefix+product?.image" class="card-img-top">
+        <img [src]="product?.image" class="card-img-top">
         <div class="card-body">
           <h5 class="card-title">{{product?.brand}}</h5>
           <p class="card-text">{{product?.description}}</p>
@@ -53,7 +53,7 @@
     </div>
 
   </div>
-  <div class="  w-25 m-auto mt-5 mb-5 test-center">
+  <div  id="pagination-container"class="  w-25 m-auto mt-5 mb-5 test-center">
     <ngb-pagination [ngClass]="{'pagination-display': products.length===0}" [collectionSize]="numPages" [(page)]="p">
     </ngb-pagination>
   </div>

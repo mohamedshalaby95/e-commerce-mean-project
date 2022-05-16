@@ -27,3 +27,18 @@ th {
 .order-navigate {
   cursor: pointer;
 }
+@media (max-width:768px)  {
+
+  #accept-order{
+
+
+    margin-right: 100px !important;
+    font-size: 12px;
+    padding: 5px !important;
+
+  }
+  #canncel-order{
+    font-size: 12px;
+    padding: 5px !important;
+  }
+ }

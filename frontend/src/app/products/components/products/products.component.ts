@@ -23,7 +23,7 @@ export class ProductsComponent implements OnInit {
   brand: any;
   selectedCategory: string = '';
 
-  imagePrefix: string = 'assets/images/';
+
   constructor(
     private router: Router,
     private _products: ProductsService,
@@ -54,7 +54,7 @@ export class ProductsComponent implements OnInit {
   }
 
   selectChangeHandler(event: any) {
-    console.log(event.target.value);
+
 
     if (event.target.value === 'Choose By Category') {
       this.ngOnInit();
@@ -86,7 +86,7 @@ export class ProductsComponent implements OnInit {
         this.dialog
           .open(ConfirmComponent, {
             data: product,
-            width: '30%',
+            width: '50%',
           })
           .afterClosed()
           .subscribe((result) => {

@@ -190,7 +190,7 @@ export class DialogComponent implements OnInit {
       })
     } else {
       if(this.productForm.get('image').touched===true){
-        console.log('toucched')
+     
 
 
 

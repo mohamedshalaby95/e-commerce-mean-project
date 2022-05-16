@@ -19,3 +19,11 @@ td, th {
 .order-navigate{
   cursor: pointer;
 }
+@media (max-width:480px)  {
+
+  #product{
+   color:'red' !important;
+    display: none;
+  }
+
+ }
